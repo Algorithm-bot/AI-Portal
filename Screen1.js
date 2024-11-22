@@ -1,14 +1,42 @@
-import React from 'react';
-import { View, Text, Button } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Button, FlatList, TouchableOpacity } from 'react-native';
+import { WebView } from 'react-native-webview';
 
 const Screen1 = ({ navigation }) => {
+  const [selectedUrl, setSelectedUrl] = useState(null);
+
+  // List of 3 website URLs
+  const websites = [
+    { id: '1', url: 'https://www.chatgpt.com', title: 'Chatgpt' },
+    { id: '2', url: 'https://www.github.com', title: 'Gemini' },
+    { id: '3', url: 'https://www.stackoverflow.com', title: 'Stack Overflow' },
+  ];
+
+  // Handle website selection
+  const handleSelectWebsite = (url) => {
+    setSelectedUrl(url);
+  };
+
   return (
-    <View>
-      <Text>Welcome to Screen 1!</Text>
-      <Button
-        title="Go to Screen 2"
-        onPress={() => navigation.navigate('Screen2')} // Assuming you have Screen2 set up
-      />
+    <View style={{ flex: 1 }}>
+      {selectedUrl ? (
+        <WebView source={{ uri: selectedUrl }} style={{ flex: 1 }} />
+      ) : (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+         
+
+          <Text style={{ marginTop: 20 }}>Select a chatbot to view:</Text>
+          <FlatList
+            data={websites}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <TouchableOpacity onPress={() => handleSelectWebsite(item.url)}>
+                <Text style={{ padding: 10, fontSize: 18 }}>{item.title}</Text>
+              </TouchableOpacity>
+            )}
+          />
+        </View>
+      )}
     </View>
   );
 };
