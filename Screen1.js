@@ -7,18 +7,18 @@ const Screen1 = () => {
 
   // List of websites with URLs and image paths
   const websites = [
-    { id: '1', url: 'https://www.chatgpt.com', title: 'ChatGPT', image: require('./assets/images/chatgpt.jpg') },
-    { id: '2', url: 'https://gemini.google.com/app?hl=en-IN', title: 'Gemini', image: require('./assets/images/gemini.jpeg') },
-    { id: '3', url: 'https://claude.ai/new', title: 'Claude', image: require('./assets/images/claude.png') },
-    { id: '4', url: 'https://www.perplexity.ai/', title: 'Perplexity', image: require('./assets/images/perplexity.jpg') },
-    { id: '5', url: 'https://copilot.microsoft.com/', title: 'Copilot', image: require('./assets/images/copilot.png') },
-    { id: '6', url: 'https://you.com/', title: 'YOU', image: require('./assets/images/you.jpg') },
-    { id: '7', url: 'https://writesonic.com/chat', title: 'Writesonic', image: require('./assets/images/chatsonic.jpg') },
-    { id: '8', url: 'https://www.cleverbot.com/', title: 'Cleverbot', image: require('./assets/images/cleverbot.png') },
-    { id: '9', url: 'http://www.jabberwacky.com/', title: 'Jabberwacky', image: require('./assets/images/jabberwacky.png') },
-    { id: '10', url: 'https://www.kuki.ai/', title: 'Kuki', image: require('./assets/images/kuki.webp') },
-    { id: '11', url: 'https://o.simsimi.com/', title: 'SimSimi', image: require('./assets/images/simsimi.png') },
-    { id: '12', url: 'https://character.ai/', title: 'Character', image: require('./assets/images/character.png') },
+    { id: '1', url: 'https://www.chatgpt.com', title: 'ChatGPT', image: require('./assets/images/chatbots/chatgpt.jpg') },
+    { id: '2', url: 'https://gemini.google.com/app?hl=en-IN', title: 'Gemini', image: require('./assets/images/chatbots/gemini.jpeg') },
+    { id: '3', url: 'https://claude.ai/new', title: 'Claude', image: require('./assets/images/chatbots/claude.png') },
+    { id: '4', url: 'https://www.perplexity.ai/', title: 'Perplexity', image: require('./assets/images/chatbots/perplexity.jpg') },
+    { id: '5', url: 'https://copilot.microsoft.com/', title: 'Copilot', image: require('./assets/images/chatbots/copilot.png') },
+    { id: '6', url: 'https://you.com/', title: 'YOU', image: require('./assets/images/chatbots/you.jpg') },
+    { id: '7', url: 'https://writesonic.com/chat', title: 'Writesonic', image: require('./assets/images/chatbots/chatsonic.jpg') },
+    { id: '8', url: 'https://www.cleverbot.com/', title: 'Cleverbot', image: require('./assets/images/chatbots/cleverbot.png') },
+    { id: '9', url: 'http://www.jabberwacky.com/', title: 'Jabberwacky', image: require('./assets/images/chatbots/jabberwacky.png') },
+    { id: '10', url: 'https://www.kuki.ai/', title: 'Kuki', image: require('./assets/images/chatbots/kuki.webp') },
+    { id: '11', url: 'https://o.simsimi.com/', title: 'SimSimi', image: require('./assets/images/chatbots/simsimi.png') },
+    { id: '12', url: 'https://character.ai/', title: 'Character', image: require('./assets/images/chatbots/character.png') },
 
   ];
 
