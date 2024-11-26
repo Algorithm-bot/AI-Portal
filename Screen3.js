@@ -6,19 +6,20 @@ const Screen3 = () => {
   const [selectedUrl, setSelectedUrl] = useState(null);
 
   // List of websites with URLs and image paths
+  //1 and 2 are video ai
   const websites = [
-    { id: '1', url: 'https://invideo.io/', title: 'invideo', image: require('./assets/images/video/') },
-    { id: '2', url: 'https://runwayml.com/', title: 'runway', image: require('./assets/images/video/') },
-    { id: '3', url: 'https://app.leonardo.ai/?via=aixploria', title: 'Leonardo', image: require('./assets/images/video/') },
-    { id: '4', url: 'https://www.krea.ai/apps/image/flux', title: 'Krea', image: require('./assets/images/video/') },
-    { id: '5', url: 'https://creator.nightcafe.studio/', title: 'NightCafe', image: require('./assets/images/video/') },
-    { id: '6', url: 'https://sketch.metademolab.com/canvas', title: 'AD', image: require('./assets/images/video/') },
-    { id: '7', url: 'https://www.bluewillow.ai/', title: 'bluewillow', image: require('./assets/images/video/') },
-    { id: '8', url: 'https://app.flair.ai/templates', title: 'Flair', image: require('./assets/images/video/') },
-    { id: '9', url: 'https://clipdrop.co/text-to-image', title: 'Clipdrop', image: require('./assets/images/video/') },
-    { id: '10', url: 'https://dreamstudio.ai/generate', title: 'DreamStudio', image: require('./assets/images/video/') },
-    { id: '11', url: 'https://easy-peasy.ai/ai-images', title: 'EasyPeasy', image: require('./assets/images/video/') },
-    { id: '12', url: 'https://tensor.art/', title: 'TensorArt', image: require('./assets/images/video/') },
+    { id: '1', url: 'https://invideo.io/', title: 'invideo', image: require('./assets/images/video/invideo.png') },
+    { id: '2', url: 'https://runwayml.com/', title: 'runway', image: require('./assets/images/video/runway.webp') },
+    { id: '3', url: 'https://www.klingai.com/', title: 'KlingAI', image: require('./assets/images/video/kling.jpg') },
+    { id: '4', url: 'https://app.heygen.com/home', title: 'HeyGenAI', image: require('./assets/images/video/HeyGen.jpg') },
+    { id: '5', url: 'https://app.aistudios.com/dashboard', title: 'DeepbrainAI', image: require('./assets/images/video/DeepBrain.png') },
+    { id: '6', url: 'https://www.colossyan.com/', title: 'Colossyan', image: require('./assets/images/video/colossyan.png') },
+    { id: '7', url: 'https://app.pictory.ai/signup', title: 'Pictory', image: require('./assets/images/video/pictory.png') },
+    { id: '8', url: 'https://lumen5.com/', title: 'lumen5', image: require('./assets/images/video/lumen.png') },
+    { id: '9', url: 'https://www.renderforest.com/ai-video-generator', title: 'RenderForest', image: require('./assets/images/video/RenderForest.png') },
+    { id: '10', url: 'https://www.freepik.com/ai/video-generator', title:'Freepik', image: require('./assets/images/video/freepik.png') },
+    { id: '11', url: 'https://www.canva.com/features/ai-video-generator/', title: 'Canva', image: require('./assets/images/video/canva.png') },
+    { id: '12', url: 'https://www.veed.io/tools/ai-video', title: 'Veed', image: require('./assets/images/video/veed.png') },
 
 
 
