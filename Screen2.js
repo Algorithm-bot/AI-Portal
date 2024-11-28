@@ -1,86 +1,144 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
-import { WebView } from 'react-native-webview';
 
-const Screen2 = () => {
-  const [selectedUrl, setSelectedUrl] = useState(null);
-
+const Screen2 = ({ navigation }) => {
   // List of websites with URLs and image paths
   const websites = [
-    { id: '1', url: 'https://ideogram.ai/t/explore', title: 'Ideogram', image: require('./assets/images/photo-generators/Ideogram.jpg') },
-    { id: '2', url: 'https://www.adobe.com/products/firefly/features/text-to-image.html', title: 'Adobe', image: require('./assets/images/photo-generators/adobe.jpg') },
-    { id: '3', url: 'https://app.leonardo.ai/?via=aixploria', title: 'Leonardo', image: require('./assets/images/photo-generators/leonardo.jpg') },
-    { id: '4', url: 'https://www.krea.ai/apps/image/flux', title: 'Krea', image: require('./assets/images/photo-generators/krea.jpg') },
-    { id: '5', url: 'https://creator.nightcafe.studio/', title: 'NightCafe', image: require('./assets/images/photo-generators/NightCafe.png') },
-    { id: '6', url: 'https://sketch.metademolab.com/canvas', title: 'AD', image: require('./assets/images/photo-generators/AD.png') },
-    { id: '7', url: 'https://www.bluewillow.ai/', title: 'bluewillow', image: require('./assets/images/photo-generators/BlueWillow.jpg') },
-    { id: '8', url: 'https://app.flair.ai/templates', title: 'Flair', image: require('./assets/images/photo-generators/flair.png') },
-    { id: '9', url: 'https://clipdrop.co/text-to-image', title: 'Clipdrop', image: require('./assets/images/photo-generators/clipdrop.jpg') },
-    { id: '10', url: 'https://dreamstudio.ai/generate', title: 'DreamStudio', image: require('./assets/images/photo-generators/DreamStudio.png') },
-    { id: '11', url: 'https://easy-peasy.ai/ai-images', title: 'EasyPeasy', image: require('./assets/images/photo-generators/EasyPeasy.png') },
-    { id: '12', url: 'https://tensor.art/', title: 'TensorArt', image: require('./assets/images/photo-generators/TensorArt.jpg') },
+    {
+        id: '1',
+        title: 'Ideogram',
+        image: require('./assets/images/photo-generators/Ideogram.jpg'),
+        screen: 'Ideogram',
+    },
+    {
+        id: '2',
+        title: 'Adobe',
+        image: require('./assets/images/photo-generators/adobe.jpg'),
+        screen: 'Adobe',
+    },
+    {
+        id: '3',
+        title: 'Leonardo',
+        image: require('./assets/images/photo-generators/leonardo.jpg'),
+        screen: 'Leonardo',
+    },
+    {
+        id: '4',
+        title: 'Krea',
+        image: require('./assets/images/photo-generators/krea.jpg'),
+        screen: 'Krea',
+    },
+    {
+        id: '5',
+        title: 'NightCafe',
+        image: require('./assets/images/photo-generators/NightCafe.png'),
+        screen: 'NightCafe',
+    },
+    {
+        id: '6',
+        title: 'AD',
+        image: require('./assets/images/photo-generators/AD.png'),
+        screen: 'AD',
+    },
+    {
+        id: '7',
+        title: 'bluewillow',
+        image: require('./assets/images/photo-generators/BlueWillow.jpg'),
+        screen: 'bluewillow',
+    },
+    {
+        id: '8',
+        title: 'Flair',
+        image: require('./assets/images/photo-generators/flair.png'), 
+        screen: 'Flair',
+    },
 
+    {
+      id:'9',
+      title:'DreamStudio',
+      image: require('./assets/images/photo-generators/DreamStudio.png'), 
+      screen: 'DreamStudio'
+    },
 
+    {
+      id:'10',
+      title:'Clipdrop',
+      image: require('./assets/images/photo-generators/clipdrop.jpg'),
+      screen: 'Clipdrop' 
+    },
 
-    
+    { 
+      id: '11', 
+      title: 'EasyPeasy', 
+      image: require('./assets/images/photo-generators/EasyPeasy.png'), 
+      screen: 'EasyPeasy' 
+    },
 
+    { 
+      id: '12', 
+      title: 'TensorArt', 
+      image: require('./assets/images/photo-generators/TensorArt.jpg'), 
+      screen: 'TensorArt' 
+    },
   ];
 
-  // Handle website selection
-  const handleSelectWebsite = (url) => {
-    setSelectedUrl(url);
+  // Handle navigation when an item is clicked
+  const handleNavigation = (screen) => {
+    navigation.navigate(screen);
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: '#252525' }}>
-      {selectedUrl ? (
-        // Display WebView if a website is selected
-        <WebView source={{ uri: selectedUrl }} style={{ flex: 1 }} />
-      ) : (
-        // Main layout for selection screen
-        <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-          <View style={{ flex: 1, alignItems: 'center', paddingTop: 30 }}>
-            {/* Title */}
-            <Text style={{ marginBottom: 20, fontSize: 23, fontFamily: 'MyFont', color: 'white' }}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1, alignItems: 'center', paddingTop: 30 }}>
+          {/* Title */}
+          <Text
+            style={{
+              marginBottom: 20,
+              fontSize: 23,
+              fontFamily: 'MyFont',
+              color: 'white',
+            }}
+          >
             Choose a Text-to-Image AI Bot
-            </Text>
+          </Text>
 
-            {/* Grid layout for images */}
-            <View
-              style={{
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                justifyContent: 'center',
-                paddingHorizontal: 10,
-              }}
-            >
-              {websites.map((website) => (
-                <TouchableOpacity
-                  key={website.id}
-                  onPress={() => handleSelectWebsite(website.url)}
+          {/* Grid layout for images */}
+          <View
+            style={{
+              flexDirection: 'row',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              paddingHorizontal: 10,
+              marginTop: 80, // Add space between top text and images
+            }}
+          >
+            {websites.map((website) => (
+              <TouchableOpacity
+                key={website.id}
+                onPress={() => handleNavigation(website.screen)} // Navigate to the target screen
+                style={{
+                  width: 150,
+                  height: 100,
+                  margin: 10,
+                  backgroundColor: '#444',
+                  borderRadius: 10,
+                }}
+              >
+                <Image
+                  source={website.image}
                   style={{
-                    width: 150,
-                    height: 100,
-                    margin: 10,
-                    backgroundColor: '#444',
+                    width: '100%',
+                    height: '100%',
                     borderRadius: 10,
                   }}
-                >
-                  <Image
-                    source={website.image}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: 10,
-                    }}
-                    resizeMode="cover"
-                  />
-                </TouchableOpacity>
-              ))}
-            </View>
+                  resizeMode="cover"
+                />
+              </TouchableOpacity>
+            ))}
           </View>
-        </ScrollView>
-      )}
+        </View>
+      </ScrollView>
     </View>
   );
 };
