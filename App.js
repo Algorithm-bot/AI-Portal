@@ -18,6 +18,8 @@ import Jabberwacky from "./GPTs/Jabberwacky";
 import Kuki from "./GPTs/Kuki";
 import SimSimi from "./GPTs/SimSimi";
 import Character from "./GPTs/Character";
+import Ideogram from "./Image-GPTs/Ideogram";
+import Adobe from "./Image-GPTs/Adobe";
 
 const Stack = createStackNavigator();
 
@@ -121,6 +123,22 @@ export default function App() {
           component={Character}
           options={{ headerShown: false }} // Optional: Hide the header
         />
+
+
+        <Stack.Screen                //Following are image generators stack
+          name="Ideogram"
+          component={Ideogram}
+          options={{ headerShown: false }} // Optional: Hide the header
+        />
+
+        <Stack.Screen                //Following are image generators stack
+          name="Adobe"
+          component={Adobe}
+          options={{ headerShown: false }} // Optional: Hide the header
+        />
+
+
+
       </Stack.Navigator>
     </NavigationContainer>
   );
