@@ -28,7 +28,7 @@ const Flashcards = ({ navigation }) => {  // Receive navigation prop
         style={styles.card} 
         onPress={() => navigation.navigate('Screen4')}
       >
-        <Text style={styles.cardText}>Predictive Analysis</Text>
+        <Text style={styles.cardText}>Speech Synthesis AI</Text>
       </TouchableOpacity>
     </View>
   );

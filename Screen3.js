@@ -5,22 +5,80 @@ import { WebView } from 'react-native-webview';
 const Screen3 = () => {
   const [selectedUrl, setSelectedUrl] = useState(null);
 
-  // List of websites with URLs and image paths
-  //1 and 2 are video ai
   const websites = [
-    { id: '1', url: 'https://invideo.io/', title: 'invideo', image: require('./assets/images/video/invideo.png') },
-    { id: '2', url: 'https://runwayml.com/', title: 'runway', image: require('./assets/images/video/runway.webp') },
-    { id: '3', url: 'https://www.klingai.com/', title: 'KlingAI', image: require('./assets/images/video/kling.jpg') },
-    { id: '4', url: 'https://app.heygen.com/home', title: 'HeyGenAI', image: require('./assets/images/video/HeyGen.jpg') },
-    { id: '5', url: 'https://app.aistudios.com/dashboard', title: 'DeepbrainAI', image: require('./assets/images/video/DeepBrain.png') },
-    { id: '6', url: 'https://www.colossyan.com/', title: 'Colossyan', image: require('./assets/images/video/colossyan.png') },
-    { id: '7', url: 'https://app.pictory.ai/signup', title: 'Pictory', image: require('./assets/images/video/pictory.png') },
-    { id: '8', url: 'https://lumen5.com/', title: 'lumen5', image: require('./assets/images/video/lumen.png') },
-    { id: '9', url: 'https://www.renderforest.com/ai-video-generator', title: 'RenderForest', image: require('./assets/images/video/RenderForest.png') },
-    { id: '10', url: 'https://www.freepik.com/ai/video-generator', title:'Freepik', image: require('./assets/images/video/freepik.png') },
-    { id: '11', url: 'https://www.canva.com/features/ai-video-generator/', title: 'Canva', image: require('./assets/images/video/canva.png') },
-    { id: '12', url: 'https://www.veed.io/tools/ai-video', title: 'Veed', image: require('./assets/images/video/veed.png') },
-
+    {
+      id: '1',
+      title: 'invideo',
+      image: require('./assets/images/video/invideo.png'),
+      screen: 'Invideo',
+  },
+  {
+      id: '2',
+      title: 'runway',
+      image: require('./assets/images/video/runway.webp'),
+      screen: 'Runway',
+  },
+  {
+      id: '3',
+      title: 'KlingAI',
+      image: require('./assets/images/video/kling.jpg'),
+      screen: 'KlingAI',
+  },
+  {
+      id: '4',
+      title: 'HeyGenAI',
+      image: require('./assets/images/video/HeyGen.jpg'),
+      screen: 'HeyGenAI',
+  },
+  {
+      id: '5',
+      title: 'DeepbrainAI',
+      image: require('./assets/images/video/DeepBrain.png'),
+      screen: 'DeepbrainAI',
+  },
+  {
+      id: '6',
+      title: 'Colossyan',
+      image: require('./assets/images/video/colossyan.png'),
+      screen: 'Colossyan',
+  },
+  {
+      id: '7',
+      title: 'Pictory',
+      image: require('./assets/images/video/pictory.png'),
+      screen: 'Pictory',
+  },
+  {
+      id: '8',
+      title: 'Lumen5',
+      image: require('./assets/images/video/lumen.png'),
+      screen: 'Lumen5',
+  },
+  {
+      id: '9',
+      title: 'RenderForest',
+      image: require('./assets/images/video/RenderForest.png'),
+      screen: 'RenderForest',
+  },
+  {
+      id: '10',
+      title: 'Freepik',
+      image: require('./assets/images/video/freepik.png'),
+      screen: 'Freepik',
+  },
+  {
+      id: '11',
+      title: 'Canva',
+      image: require('./assets/images/video/canva.png'),
+      screen: 'Canva',
+  },
+  {
+      id: '12',
+      title: 'Veed',
+      image: require('./assets/images/video/veed.png'),
+      screen: 'Veed',
+  },
+  
 
 
     
