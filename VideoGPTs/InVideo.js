@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { WebView } from "react-native-webview";
 import Icon from "react-native-vector-icons/MaterialIcons"; // Import Icon from MaterialIcons
 
-const Invideo = ({ navigation }) => {
+const InVideo = ({ navigation }) => {
   const [showWebView, setShowWebView] = useState(false);
 
   const handleTryNow = () => {
@@ -134,4 +134,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Invideo;
+export default InVideo;

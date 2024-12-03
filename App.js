@@ -40,7 +40,7 @@ import Runway from "./VideoGPTs/Runway";
 import InVideo from "./VideoGPTs/InVideo";
 import KlingAI from "./VideoGPTs/KlingAI";
 import HeyGenAI from "./VideoGPTs/HeyGenAI";
-import DeepbrainAI from "/VideoGPTs/HeyGenAI";
+import DeepbrainAI from "./VideoGPTs/DeepbrainAI";
 import Colossyan from "./VideoGPTs/Colossyan";
 import Pictory from "./VideoGPTs/Pictory";
 import Lumen5 from "./VideoGPTs/Lumen5";
@@ -230,7 +230,6 @@ export default function App() {
           component={InVideo}
           options={{ headerShown: false }}
         />
-
         <Stack.Screen
           name="Runway"
           component={Runway}
@@ -291,7 +290,7 @@ export default function App() {
           options={{ headerShown: false }}
         />
 
-<Stack.Screen
+        <Stack.Screen
           name="Veed"
           component={Veed}
           options={{ headerShown: false }}

@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
-import { WebView } from 'react-native-webview';
 
-const Screen3 = () => {
-  const [selectedUrl, setSelectedUrl] = useState(null);
+const Screen3 = ({navigation}) => {
 
   const websites = [
     {
@@ -78,68 +76,67 @@ const Screen3 = () => {
       image: require('./assets/images/video/veed.png'),
       screen: 'Veed',
   },
-  
-
-
-    
 
   ];
 
-  // Handle website selection
-  const handleSelectWebsite = (url) => {
-    setSelectedUrl(url);
+ 
+  // Handle navigation when an item is clicked
+  const handleNavigation = (screen) => {
+    navigation.navigate(screen);
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: '#252525' }}>
-      {selectedUrl ? (
-        // Display WebView if a website is selected
-        <WebView source={{ uri: selectedUrl }} style={{ flex: 1 }} />
-      ) : (
-        // Main layout for selection screen
-        <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-          <View style={{ flex: 1, alignItems: 'center', paddingTop: 30 }}>
-            {/* Title */}
-            <Text style={{ marginBottom: 20, fontSize: 23, fontFamily: 'MyFont', color: 'white' }}>
-            Choose a Text-to-Image AI Bot
-            </Text>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1, alignItems: 'center', paddingTop: 30 }}>
+          {/* Title */}
+          <Text
+            style={{
+              marginBottom: 20,
+              fontSize: 23,
+              fontFamily: 'MyFont',
+              color: 'white',
+            }}
+          >
+            Choose a Text-to-Video AI Bot
+          </Text>
 
-            {/* Grid layout for images */}
-            <View
-              style={{
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                justifyContent: 'center',
-                paddingHorizontal: 10,
-              }}
-            >
-              {websites.map((website) => (
-                <TouchableOpacity
-                  key={website.id}
-                  onPress={() => handleSelectWebsite(website.url)}
+          {/* Grid layout for images */}
+          <View
+            style={{
+              flexDirection: 'row',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              paddingHorizontal: 10,
+              marginTop: 80, // Add space between top text and images
+            }}
+          >
+            {websites.map((website) => (
+              <TouchableOpacity
+                key={website.id}
+                onPress={() => handleNavigation(website.screen)} // Navigate to the target screen
+                style={{
+                  width: 150,
+                  height: 100,
+                  margin: 10,
+                  backgroundColor: '#444',
+                  borderRadius: 10,
+                }}
+              >
+                <Image
+                  source={website.image}
                   style={{
-                    width: 150,
-                    height: 100,
-                    margin: 10,
-                    backgroundColor: '#444',
+                    width: '100%',
+                    height: '100%',
                     borderRadius: 10,
                   }}
-                >
-                  <Image
-                    source={website.image}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: 10,
-                    }}
-                    resizeMode="cover"
-                  />
-                </TouchableOpacity>
-              ))}
-            </View>
+                  resizeMode="cover"
+                />
+              </TouchableOpacity>
+            ))}
           </View>
-        </ScrollView>
-      )}
+        </View>
+      </ScrollView>
     </View>
   );
 };
