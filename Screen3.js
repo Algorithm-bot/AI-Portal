@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 
 const Screen3 = ({navigation}) => {
 
@@ -80,65 +80,70 @@ const Screen3 = ({navigation}) => {
   ];
 
  
-  // Handle navigation when an item is clicked
   const handleNavigation = (screen) => {
     navigation.navigate(screen);
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#252525' }}>
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={{ flex: 1, alignItems: 'center', paddingTop: 30 }}>
-          {/* Title */}
-          <Text
-            style={{
-              marginBottom: 20,
-              fontSize: 23,
-              fontFamily: 'MyFont',
-              color: 'white',
-            }}
-          >
-            Choose a Text-to-Video AI Bot
-          </Text>
-
-          {/* Grid layout for images */}
-          <View
-            style={{
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-              justifyContent: 'center',
-              paddingHorizontal: 10,
-              marginTop: 80, // Add space between top text and images
-            }}
-          >
-            {websites.map((website) => (
-              <TouchableOpacity
-                key={website.id}
-                onPress={() => handleNavigation(website.screen)} // Navigate to the target screen
-                style={{
-                  width: 150,
-                  height: 100,
-                  margin: 10,
-                  backgroundColor: '#444',
-                  borderRadius: 10,
-                }}
-              >
-                <Image
-                  source={website.image}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: 10,
-                  }}
-                  resizeMode="cover"
-                />
-              </TouchableOpacity>
-            ))}
-          </View>
+    <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <Text style={styles.title}>Bring Your Words to Life!</Text>
+        <View style={styles.grid}>
+          {websites.map((website) => (
+            <TouchableOpacity
+              key={website.id}
+              onPress={() => handleNavigation(website.screen)}
+              style={styles.card}
+            >
+              <Image source={website.image} style={styles.cardImage} resizeMode="cover" />
+            </TouchableOpacity>
+          ))}
         </View>
       </ScrollView>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#252525',
+  },
+  scrollContainer: {
+    flexGrow: 1,
+    alignItems: 'center',
+    paddingVertical: 30,
+  },
+  title: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: '#FFD700', // Golden color for emphasis
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 4,
+    letterSpacing: 1.2,
+    marginBottom: 30,
+    marginTop:25,
+  },
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+  },
+  card: {
+    width: 150,
+    height: 100,
+    margin: 10,
+    backgroundColor: '#444',
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
+  cardImage: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
+  },
+});
 
 export default Screen3;
