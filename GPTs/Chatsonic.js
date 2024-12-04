@@ -53,15 +53,15 @@ const Chatsonic = ({ navigation }) => {
           />
 
           {/* Description */}
-          <Text style={styles.title}>
-          Chatsonic: Your AI Creative Catalyst
-          </Text>
+          <Text style={styles.title}>Chatsonic: Your AI Creative Catalyst</Text>
           <Text style={styles.description}>
-            More than just another chatbot, Chatsonic breaks the mold with its
-            dynamic approach. It blends real-time internet insights with
-            creative problem-solving, turning complex tasks into seamless
-            experiences. Think of it as your digital brainstorming partner,
-            ready to unlock ideas you didn't even know were brewing.
+            ChatSonic is an AI-powered chatbot developed by Writesonic, designed
+            to assist users with a variety of tasks such as generating content,
+            answering questions, and brainstorming ideas. It uses advanced
+            language models to provide human-like responses, making it useful
+            for content creators, marketers, and anyone in need of quick,
+            intelligent assistance. ChatSonic can help write blog posts, create
+            social media captions, or even generate code
           </Text>
 
           {/* Try Now Button */}
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 250,
+    width: 290,
     height: 250,
     marginBottom: 20,
   },
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

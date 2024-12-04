@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { WebView } from "react-native-webview";
 import Icon from "react-native-vector-icons/MaterialIcons"; // Import Icon from MaterialIcons
 
-const Gemini = ({ navigation }) => {
+const NaturalReader = ({ navigation }) => {
   const [showWebView, setShowWebView] = useState(false);
 
   const handleTryNow = () => {
@@ -29,7 +29,9 @@ const Gemini = ({ navigation }) => {
 
           {/* WebView */}
           <WebView
-            source={{ uri: "https://gemini.google.com/app?hl=en-IN" }}
+            source={{
+              uri: "https://www.naturalreaders.com/online/",
+            }}
             style={{ flex: 1 }}
           />
         </View>
@@ -47,21 +49,22 @@ const Gemini = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/chatbots/gemini.jpeg")}
+            source={require("../assets/images/audio/naturalreader.png")}
             style={styles.image}
             resizeMode="contain"
           />
 
           {/* Description */}
-          <Text style={styles.title}>Gemini: Google's AI Powerhouse</Text>
+          <Text style={styles.title}>
+          Adobe Firefly: Creativity Unleashed by AI
+
+          </Text>
           <Text style={styles.description}>
-            Gemini AI, created by Google DeepMind, is a powerful tool that can
-            understand and create text, images, and other types of content. It’s
-            useful for a variety of people, including students, businesses, and
-            creators, helping them with tasks like writing, designing, or
-            solving problems. Gemini AI is easy to use and works smoothly,
-            making it a popular choice for anyone who wants smart, reliable
-            assistance in their work.
+            Adobe Firefly transforms digital creativity, enabling artists and
+            designers to generate, edit, and reimagine visual content with
+            unprecedented ease. This AI-powered tool turns text prompts into
+            stunning images, seamlessly integrating with Adobe's creative
+            ecosystem to revolutionize digital design.
           </Text>
 
           {/* Try Now Button */}
@@ -104,15 +107,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 250,
-    height: 250,
+    width: 200,
+    height: 200,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 20,
+    marginBottom: 10,
     textAlign: "center",
   },
   description: {
@@ -135,4 +138,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Gemini;
+export default NaturalReader;

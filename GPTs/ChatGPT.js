@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

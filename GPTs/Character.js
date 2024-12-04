@@ -59,7 +59,7 @@ const Character = ({ navigation }) => {
           <Text style={styles.description}>
             Launched in 2022, Character.AI revolutionized conversational AI by
             transforming chat interfaces into a boundless theater of
-            imagination. More than a mere chatbot platform, it became a digital
+            imagination. It became a digital
             playground where users could converse with AI-powered versions of
             historical figures, fictional characters, and entirely original
             personalities, blurring the lines between creativity, roleplay, and
@@ -106,15 +106,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 230,
+    height: 230,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

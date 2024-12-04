@@ -49,6 +49,20 @@ import Freepik from "./VideoGPTs/Freepik";
 import Canva from "./VideoGPTs/Canva";
 import Veed from "./VideoGPTs/Veed";
 
+//Below are AudioGPTs
+import Talkie from "./SoundGPTs/Talkie";
+import CanvaTTS from "./SoundGPTs/CanvaTTS";
+import DesiVocal from "./SoundGPTs/DesiVocal";
+import ElevenLabs from "./SoundGPTs/ElevenLabs";
+import InVideoTTS from "./SoundGPTs/InVideoTTS";
+import MurfAI from "./SoundGPTs/MurfAI";
+import Narakeet from "./SoundGPTs/Narakeet";
+import NaturalReader from "./SoundGPTs/NaturalReader";
+import PlayHT from "./SoundGPTs/PlayHT";
+import Speechify from "./SoundGPTs/Speechify";
+import TTS from "./SoundGPTs/TTS";
+import VoiceMaker from "./SoundGPTs/VoiceMaker";
+
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -293,6 +307,78 @@ export default function App() {
         <Stack.Screen
           name="Veed"
           component={Veed}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Talkie"
+          component={Talkie}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="CanvaTTS"
+          component={CanvaTTS}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="DesiVocal"
+          component={DesiVocal}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="ElevenLabs"
+          component={ElevenLabs}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="InVideoTTS"
+          component={InVideoTTS}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="MurfAI"
+          component={MurfAI}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Narakeet"
+          component={Narakeet}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="NaturalReader"
+          component={NaturalReader}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="PlayHT"
+          component={PlayHT}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Speechify"
+          component={Speechify}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="TTS"
+          component={TTS}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="VoiceMaker"
+          component={VoiceMaker}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

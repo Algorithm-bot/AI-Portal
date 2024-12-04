@@ -47,21 +47,22 @@ const Perplexity = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/chatbots/perplexity.jpg")}
+            source={require("../assets/images/chatbots/perplexity_bg.jpg")}
             style={styles.image}
             resizeMode="contain"
           />
 
           {/* Description */}
           <Text style={styles.title}>
-          Perplexity: The AI That Finds Answers
+            Perplexity: The AI That Finds Answers
           </Text>
           <Text style={styles.description}>
-            Imagine an AI that doesn't just search the internet, but understands
-            it. Perplexity transforms online research by delivering precise,
-            contextual answers backed by real sources. It's like having a
-            brilliant researcher in your pocket, turning information overload
-            into clear, reliable insights.
+            Perplexity AI is an AI-powered assistant that helps answer questions
+            quickly and clearly. It’s designed to find accurate information and
+            explain it in simple terms, making it useful for students,
+            researchers, and anyone curious about learning something new. With
+            its easy-to-use interface, Perplexity AI helps users save time by
+            providing clear and direct answers to their queries.
           </Text>
 
           {/* Try Now Button */}
@@ -104,15 +105,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

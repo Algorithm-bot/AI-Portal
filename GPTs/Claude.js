@@ -57,12 +57,13 @@ const Claude = ({ navigation }) => {
             Claude: The AI Revolution's Brainy Sidekick
           </Text>
           <Text style={styles.description}>
-            Imagine an AI that's part genius, part creative wizard – that's
-            Claude. Born from cutting-edge technology, this digital marvel
-            doesn't just answer questions; it understands, creates, and
-            transforms how we work. From cracking complex coding challenges to
-            crafting compelling stories, Claude is reshaping human potential,
-            one conversation at a time.
+            Claude AI, developed by Anthropic, is a smart assistant designed to
+            help with writing, learning, and problem-solving. It can understand
+            and respond to questions, assist with tasks like summarizing
+            documents or brainstorming ideas, and even help write creative
+            content. Claude AI is easy to use, making it a helpful tool for
+            students, professionals, and anyone looking for quick and reliable
+            assistance. 
           </Text>
 
           {/* Try Now Button */}
@@ -105,15 +106,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 230,
+    height: 230,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

@@ -59,8 +59,8 @@ const SimSimi = ({ navigation }) => {
           <Text style={styles.description}>
             Emerging from the vibrant tech landscape of South Korea in the late
             2000s, SimSimi burst onto the digital scene like a mischievous
-            digital companion with an attitude. More than just another chatbot,
-            this AI became a global phenomenon that turned machine learning into
+            digital companion with an attitude.
+            This AI became a global phenomenon that turned machine learning into
             a playground of wit, spontaneity, and occasionally bizarre
             interactions that kept users endlessly entertained and intrigued.
           </Text>
@@ -105,15 +105,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {
