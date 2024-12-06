@@ -47,20 +47,24 @@ const InVideo = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/video/invideo.png")}
+            source={require("../assets/images/video/invideo_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
 
           {/* Description */}
           <Text style={styles.title}>
-          InVideo: AI Video Creation Simplified
-
+            InVideo: AI Video Creation Simplified
           </Text>
           <Text style={styles.description}>
-            Transform ideas into professional videos instantly. InVideo uses AI
-            to help creators, marketers, and businesses produce engaging video
-            content quickly and easily, without complex editing skills.
+            InVideo allows users to create videos by
+            converting written scripts into engaging visual content. Developed
+            by InVideo, it uses AI to pair text with relevant stock footage,
+            animations, and music. Ideal for marketers, educators, and content
+            creators, it simplifies video production for social media, ads, and
+            presentations. Launched in 2022, it has become popular for its ease
+            of use, saving time and effort in creating professional-looking
+            videos.
           </Text>
 
           {/* Try Now Button */}
@@ -103,15 +107,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 280,
+    height: 180,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

@@ -47,7 +47,7 @@ const Colossyan = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/video/colossyan.png")}
+            source={require("../assets/images/video/colossyan_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
@@ -63,9 +63,7 @@ const Colossyan = ({ navigation }) => {
             can generate videos from text using AI avatars, facilitating
             efficient training, onboarding, and internal communications and
             personalized AI video content in over 70 languages, enhancing
-            engagement and accessibility. In February 2024, Colossyan raised $22
-            million in a Series A funding round led by Lakestar, underscoring
-            its growth and potential in the AI video sector.
+            engagement and accessibility. 
           </Text>
 
           {/* Try Now Button */}
@@ -108,7 +106,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
+    width: 240,
     height: 200,
     marginBottom: 20,
   },
@@ -116,7 +114,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

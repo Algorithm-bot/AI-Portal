@@ -57,11 +57,12 @@ const Clipdrop = ({ navigation }) => {
           {/* Description */}
           <Text style={styles.title}>Clipdrop: Reality Meets AI Design</Text>
           <Text style={styles.description}>
-            Clipdrop transforms real-world images into design magic. Created by
-            Stability AI, this tool lets creators instantly remove backgrounds,
-            generate AI art, and merge reality with digital imagination. It
-            turns smartphone snapshots and quick sketches into
-            professional-grade designs with breathtaking speed and precision.
+            ClipDrop, developed by Init ML (in collaboration with Stability AI),
+            is an AI-powered creative tool that simplifies tasks like background
+            removal, object cleanup, and image enhancement. ClipDrop's user-friendly
+            interface and advanced features, such as text-to-image generation
+            using Stable Diffusion, have made it a go-to tool for creating
+            polished visuals quickly and efficiently.
           </Text>
 
           {/* Try Now Button */}
@@ -104,15 +105,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 240,
+    height: 240,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

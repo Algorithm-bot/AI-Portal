@@ -49,22 +49,21 @@ const Adobe = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/photo-generators/adobe.jpg")}
+            source={require("../assets/images/photo-generators/adobe_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
 
           {/* Description */}
           <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
+            Adobe Firefly: Creativity Unleashed by AI
           </Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            Adobe Firefly is a generative AI tool developed by Adobe in March
+            2023. It creates images, text effects, and designs from user
+            prompts, integrating seamlessly with Adobe products like Photoshop.
+            Firefly is popular among designers, marketers, and creatives for
+            tasks like image generation, branding, and artistic effects.
           </Text>
 
           {/* Try Now Button */}
@@ -107,15 +106,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 240,
+    height: 230,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

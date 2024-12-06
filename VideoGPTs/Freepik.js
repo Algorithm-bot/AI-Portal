@@ -47,23 +47,23 @@ const Freepik = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/video/freepik.png")}
+            source={require("../assets/images/video/freepik_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
 
           {/* Description */}
           <Text style={styles.title}>
-          Freepik: A Global Hub for Creative Resources and Design Inspiration
+            Freepik: A Global Hub for Creative Resources and Design Inspiration
           </Text>
           <Text style={styles.description}>
             Freepik, founded in 2010 in Málaga, Spain, is a leading platform
-            offering a vast collection of graphic resources, including vectors,
-            illustrations, photos, and PSD files. Catering to designers,
-            marketers, and content creators, it provides both free and premium
-            assets to enhance creative projects. As of 2022, Freepik was
-            recognized in G2's Best Software Awards, ranking 17th in Europe, the
-            Middle East, and Africa, and 43rd in the list of best design
+            offering a vast collection of graphic resources, Freepik’s
+            text-to-video feature uses AI to generate videos from written text,
+            combining visuals with relevant animations and effects. It provides both free
+            and premium assets to enhance creative projects. As of 2022, Freepik
+            was recognized in G2's Best Software Awards, ranking 17th in Europe,
+            the Middle East, and Africa, and 43rd in the list of best design
             products.
           </Text>
 
@@ -107,15 +107,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 230,
+    height: 180,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

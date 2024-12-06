@@ -49,22 +49,21 @@ const CanvaTTS = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/video/canva.png")}
+            source={require("../assets/images/video/canva_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
 
           {/* Description */}
-          <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
-          </Text>
+          <Text style={styles.title}>AI Narration: Canva's Audio Design</Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            Canva TTS is a text-to-speech feature within Canva’s design platform
+            that allows users to convert written text into natural-sounding
+            voiceovers. It offers a variety of voices and languages, enabling
+            easy integration of speech into presentations, videos, and social
+            media content. Introduced as part of Canva’s broad suite of tools,
+            Canva TTS is particularly popular among content creators, marketers,
+            and educators for its accessibility and simplicity.
           </Text>
 
           {/* Try Now Button */}
@@ -107,15 +106,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 240,
+    height: 180,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

@@ -56,15 +56,14 @@ const NaturalReader = ({ navigation }) => {
 
           {/* Description */}
           <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
+            Breaking Silent Screens: NaturalReader's Voice Tech
           </Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            Founded in 2007, NaturalReader has become popular among educators,
+            content creators, and professionals for its ease of use and
+            realistic voice output. It’s widely used by people looking for
+            reliable TTS solutions for accessibility, study aids, and multimedia
+            production.
           </Text>
 
           {/* Try Now Button */}
@@ -108,14 +107,14 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 200,
-    height: 200,
+    height: 220,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

@@ -56,7 +56,7 @@ const Veed = ({ navigation }) => {
 
           {/* Description */}
           <Text style={styles.title}>
-          VEED: Transforming Ideas into Engaging Visual Content
+          VEED: Transforming Ideas into Visual Content
           </Text>
           <Text style={styles.description}>
             VEED's Text-to-Video feature leverages AI to convert written prompts
@@ -108,8 +108,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 300,
+    height: 180,
     marginBottom: 20,
   },
   title: {

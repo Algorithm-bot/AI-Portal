@@ -56,15 +56,16 @@ const MurfAI = ({ navigation }) => {
 
           {/* Description */}
           <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
+          MurfAI: Sculpting Digital Voices
           </Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            Murf AI  generates lifelike
+            speech from text, offering a wide range of voices and accents. It is
+            designed to create realistic voiceovers for presentations, podcasts,
+            audiobooks, and more. Users can also adjust tone, speed, and pitch
+            to customize the audio output. Launched in 2020, Murf AI has gained
+            popularity among content creators, marketers, and professionals for
+            its ability to produce high-quality audio with minimal effort.
           </Text>
 
           {/* Try Now Button */}
@@ -107,15 +108,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 160,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

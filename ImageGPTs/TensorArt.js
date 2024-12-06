@@ -59,9 +59,12 @@ const TensorArt = ({ navigation }) => {
             Tensor Art: Where AI Dreams Become Images
           </Text>
           <Text style={styles.description}>
-            A powerful AI art generator that transforms text into stunning,
-            imaginative visuals. Creators and artists can craft unique digital
-            artwork with advanced customization and creative control.
+            Tensor Art is an AI-driven tool for generating creative,
+            high-quality digital art from text prompts. It uses advanced machine
+            learning models, such as Stable Diffusion, to create visually
+            striking images in various styles. Launched in 2023, it caters to
+            artists, designers, and hobbyists, enabling them to explore
+            imaginative visuals with ease.
           </Text>
 
           {/* Try Now Button */}
@@ -104,15 +107,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

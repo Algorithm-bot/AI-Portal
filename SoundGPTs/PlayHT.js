@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { WebView } from "react-native-webview";
 import Icon from "react-native-vector-icons/MaterialIcons"; // Import Icon from MaterialIcons
 
-const PlayHT= ({ navigation }) => {
+const PlayHT = ({ navigation }) => {
   const [showWebView, setShowWebView] = useState(false);
 
   const handleTryNow = () => {
@@ -55,16 +55,15 @@ const PlayHT= ({ navigation }) => {
           />
 
           {/* Description */}
-          <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
-          </Text>
+          <Text style={styles.title}>PlayHT: Audio AI's New Frontier</Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            PlayHT  converts text into
+            lifelike speech, offering a wide range of natural-sounding voices
+            and languages. It allows users to create voiceovers for podcasts,
+            audiobooks, presentations, and more, with options to customize tone,
+            pitch, and speed. Launched in 2020, PlayHT has gained popularity
+            among podcasters, content creators, and businesses for its
+            high-quality, easy-to-use voice generation capabilities
           </Text>
 
           {/* Try Now Button */}
@@ -107,7 +106,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
+    width: 250,
     height: 200,
     marginBottom: 20,
   },
@@ -115,7 +114,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

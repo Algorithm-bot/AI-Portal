@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { WebView } from "react-native-webview";
 import Icon from "react-native-vector-icons/MaterialIcons"; // Import Icon from MaterialIcons
 
-const InVideoTTS= ({ navigation }) => {
+const InVideoTTS = ({ navigation }) => {
   const [showWebView, setShowWebView] = useState(false);
 
   const handleTryNow = () => {
@@ -49,22 +49,22 @@ const InVideoTTS= ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/video/invideo.png")}
+            source={require("../assets/images/video/invideo_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
 
           {/* Description */}
           <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
+            InVideo's Voice Revolution: Beyond Text
           </Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            InVideo TTS is a text-to-speech feature integrated into InVideo's
+            video editing platform, allowing users to convert written text into
+            realistic voiceovers for their video projects. It offers a range of
+            voices and languages, making it suitable for creating engaging
+            videos, ads, tutorials, and social media content with minimal
+            effort.
           </Text>
 
           {/* Try Now Button */}
@@ -107,15 +107,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 280,
+    height: 180,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

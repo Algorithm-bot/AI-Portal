@@ -55,15 +55,14 @@ const Krea = ({ navigation }) => {
           />
 
           {/* Description */}
-          <Text style={styles.title}>
-          Krea AI: Sparking Creative Lightning
-
-          </Text>
+          <Text style={styles.title}>Krea AI: Sparking Creative Lightning</Text>
           <Text style={styles.description}>
-            Where imagination meets instant generation, Krea rewrites the rules
-            of digital creation. It transforms fleeting ideas into vivid,
-            real-time visuals with a speed and precision that blurs the line
-            between thought and art.
+            KREA AI is particularly popular among designers, marketers, and
+            content creators who seek to generate high-quality visuals tailored
+            to their unique styles, concepts, or products. Its intuitive
+            interface simplifies the creative process, allowing users to produce
+            professional-looking content without advanced technical skills.
+            Supertools
           </Text>
 
           {/* Try Now Button */}
@@ -106,15 +105,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

@@ -56,15 +56,15 @@ const DesiVocal = ({ navigation }) => {
 
           {/* Description */}
           <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
+            AI Speaks Desi: Transforming Vocal Technology
           </Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            DesiVocal is a text-to-speech (TTS) platform that converts written
+            text into natural-sounding speech across multiple languages,
+            including Hindi, Tamil, Telugu, Punjabi, Bengali, Marathi,
+            Malayalam, Assamese, Kannada, Urdu, and Arabic. It offers
+            high-definition AI voiceovers suitable for YouTubers, publishers,
+            and media houses.
           </Text>
 
           {/* Try Now Button */}
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
+    width: 250,
     height: 200,
     marginBottom: 20,
   },
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

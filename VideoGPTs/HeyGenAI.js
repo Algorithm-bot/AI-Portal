@@ -54,18 +54,14 @@ const HeyGenAI = ({ navigation }) => {
 
           {/* Description */}
           <Text style={styles.title}>
-          HeyGen AI: Revolutionizing Video Creation with AI-Generated Avatars
-
+            HeyGen AI: Revolutionizing Video Creation with AI-Generated Avatars
           </Text>
           <Text style={styles.description}>
-            HeyGen, developed by HeyGen Inc., is an innovative AI video platform
-            that leverages generative AI to streamline video creation. It's
-            designed for businesses, marketers, and content creators aiming to
-            produce engaging videos without extensive editing skills. Users can
-            select from over 100 diverse and customizable realistic avatars,
-            input scripts, and generate videos in minutes. Its user-friendly
-            interface and advanced features have contributed to its growing
-            popularity.
+            HeyGen's text-to-video feature allows users to create videos by
+            simply entering text, transforming scripts into engaging video
+            presentations with realistic avatars. It supports multiple languages
+            and provides customization for avatars, making it ideal for business
+            pitches, educational content, and marketing campaigns. 
           </Text>
 
           {/* Try Now Button */}
@@ -108,7 +104,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
+    width: 250,
     height: 200,
     marginBottom: 20,
   },
@@ -116,7 +112,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { WebView } from "react-native-webview";
 import Icon from "react-native-vector-icons/MaterialIcons"; // Import Icon from MaterialIcons
 
-const Speechify= ({ navigation }) => {
+const Speechify = ({ navigation }) => {
   const [showWebView, setShowWebView] = useState(false);
 
   const handleTryNow = () => {
@@ -56,15 +56,17 @@ const Speechify= ({ navigation }) => {
 
           {/* Description */}
           <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
+            Text to Voice, Instantly: Speechify's Magic
           </Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            Speechify is designed to turn text into high-quality,
+            natural-sounding audio. It provides a variety of voices and
+            languages, allowing for customization of pitch, speed, and tone.
+            Ideal for users looking to convert articles, eBooks, and documents
+            into audio format, it also supports a wide range of use cases, from
+            personal productivity to educational applications. Speechify is
+            popular among students, professionals, and those with learning
+            disabilities.
           </Text>
 
           {/* Try Now Button */}
@@ -107,15 +109,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 170,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

@@ -55,16 +55,16 @@ const Narakeet = ({ navigation }) => {
           />
 
           {/* Description */}
-          <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
-          </Text>
+          <Text style={styles.title}>Voices Unleashed: Narakeet</Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            Narakeet allows users to convert written content into
+            natural-sounding speech and even create videos with AI-generated
+            voiceovers. It supports a wide range of voices, languages, and
+            accents, making it suitable for creating tutorials, explainer
+            videos, and presentations. Founded in 2020, Narakeet is popular
+            among educators, content creators, and businesses for its ability to
+            automate video creation with voiceovers, saving time while
+            delivering high-quality results.
           </Text>
 
           {/* Try Now Button */}
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
+    width: 250,
     height: 200,
     marginBottom: 20,
   },
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

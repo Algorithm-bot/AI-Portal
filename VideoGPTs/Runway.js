@@ -106,14 +106,14 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 250,
-    height: 250,
+    height: 200,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

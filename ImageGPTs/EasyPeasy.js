@@ -49,7 +49,7 @@ const EasyPeasy = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/photo-generators/EasyPeasy.png")}
+            source={require("../assets/images/photo-generators/EasyPeasy_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
@@ -57,10 +57,13 @@ const EasyPeasy = ({ navigation }) => {
           {/* Description */}
           <Text style={styles.title}>Easy Peasy: AI Design Simplified</Text>
           <Text style={styles.description}>
-            A user-friendly design tool that transforms complex graphic creation
-            into a seamless, intuitive experience. Easy Peasy helps creators
-            generate professional visuals with minimal effort, turning design
-            challenges into quick, effortless solutions.
+            EasyPeasy AI is a generative AI platform designed to simplify
+            content creation, catering to tasks like writing, image generation,
+            and brainstorming. Launched in 2023, it is ideal for marketers,
+            entrepreneurs, and professionals seeking quick, high-quality
+            outputs. With its user-friendly tools for blog writing, social media
+            content, and visual design, EasyPeasy AI has gained popularity for
+            helping users save time and effort in creating engaging content.
           </Text>
 
           {/* Try Now Button */}
@@ -103,15 +106,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 240,
+    height: 240,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

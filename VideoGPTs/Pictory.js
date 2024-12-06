@@ -47,7 +47,7 @@ const Pictory = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/video/pictory.png")}
+            source={require("../assets/images/video/pictory_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
@@ -57,13 +57,14 @@ const Pictory = ({ navigation }) => {
             Pictory: Simplifying Video Creation with AI-Driven Automation Videos
           </Text>
           <Text style={styles.description}>
-            Pictory is an AI-powered video creation platform that enables users
-            to transform text, blog posts, and long videos into short, shareable
-            branded videos. Developed by Pictory.ai, it caters to content
-            creators, marketers, and educators seeking efficient video
-            production solutions. Users can input scripts or URLs, and Pictory
-            automatically generates videos with relevant visuals, voiceovers,
-            and captions.
+            Pictory's text-to-video feature transforms written content into
+            engaging video summaries or social media videos. It uses AI to
+            analyze text and generate relevant visuals, making it ideal for
+            bloggers, marketers, and content creators.Pictory, launched in 2021,
+            is developed by Pictory.ai, a company specializing in AI-powered
+            video creation. It has gained popularity for its ease of use,
+            allowing users to quickly create professional videos from long-form
+            content.
           </Text>
 
           {/* Try Now Button */}
@@ -106,15 +107,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 230,
+    height: 180,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

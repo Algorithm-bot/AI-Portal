@@ -54,18 +54,15 @@ const DeepbrainAI = ({ navigation }) => {
 
           {/* Description */}
           <Text style={styles.title}>
-          DeepBrain AI: Empowering Content Creation with Advanced AI Avatars
-
+            DeepBrain AI: Empowering Content Creation with Advanced AI Avatars
           </Text>
           <Text style={styles.description}>
-            DeepBrain AI, established in 2016, specializes in AI video
-            generation and conversational AI technologies. Their platform
-            enables users to create realistic AI avatars and generate videos
-            from text inputs, catering to businesses, marketers, and content
-            creators seeking efficient video production solutions. As of May
-            2022, their AI Studios platform had over 30,000 subscribers and more
-            than 500,000 cumulative visitors. With over 100 diverse
-            avatars and natural text-to-speech capabilities.
+            DeepBrain AI, founded in 2016, is a South Korea-based company
+            specializing in AI-powered virtual humans and video synthesis
+            technology.DeepBrain AI's text-to-video feature converts written
+            scripts into videos using realistic AI-generated avatars and
+            voiceovers. It supports multiple languages, making it ideal for
+            corporate training, e-learning, and marketing.
           </Text>
 
           {/* Try Now Button */}
@@ -108,15 +105,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 180,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

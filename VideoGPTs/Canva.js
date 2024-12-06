@@ -49,7 +49,7 @@ const Canva = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/video/canva.png")}
+            source={require("../assets/images/video/canva_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
@@ -60,14 +60,10 @@ const Canva = ({ navigation }) => {
           </Text>
           <Text style={styles.description}>
             Canva's video creation tools empower users to design engaging videos
-            without prior experience.Users can access over a million
+            without prior experience. Users can access over a million
             professionally designed templates, stock images, videos, and music
             tracks to personalize their content. Canva also provides real-time
-            collaboration features, facilitating teamwork on video projects. For
-            social media enthusiasts, Canva offers a dedicated social media
-            video creator to craft eye-catching clips tailored for various
-            platforms. Additionally, the free animated video maker allows users
-            to animate elements or entire pages, enhancing visual appeal.
+            collaboration features, facilitating teamwork on video projects.
           </Text>
 
           {/* Try Now Button */}
@@ -110,8 +106,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 240,
+    height: 180,
     marginBottom: 20,
   },
   title: {

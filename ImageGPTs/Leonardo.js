@@ -56,14 +56,14 @@ const Leonardo = ({ navigation }) => {
 
           {/* Description */}
           <Text style={styles.title}>
-          Leonardo AI: The Digital Alchemy of Art
-
+            Leonardo AI: The Digital Alchemy of Art
           </Text>
           <Text style={styles.description}>
-            Where algorithms dance with creativity, Leonardo AI transforms raw
-            imagination into pixel-perfect masterpieces. It's not just an image
-            generator—it's a digital realm where every prompt becomes a portal
-            to unseen visual worlds.
+            Leonardo AI is a generative AI tool developed by Leonardo.ai,
+            launched in 2023. It specializes in creating high-quality game
+            assets, concept art, and designs from text prompts. Popular among
+            game developers, digital artists, and designers, it offers precision
+            and flexibility for creative projects.
           </Text>
 
           {/* Try Now Button */}
@@ -106,15 +106,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 230,
+    height: 230,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

@@ -59,9 +59,12 @@ const DreamStudio = ({ navigation }) => {
             DreamStudio: AI Art's Creative Playground
           </Text>
           <Text style={styles.description}>
-            Powered by Stability AI, DreamStudio transforms text into stunning
-            visual art. This platform lets creators generate, customize, and
-            refine AI-generated images with unprecedented precision.
+            DreamStudio AI, developed by Stability AI, is an advanced tool for
+            generating images from text prompts using Stable Diffusion
+            technology. Launched in 2022, it enables users to create highly
+            detailed and customizable visuals. DreamStudio AI is popular among
+            artists, designers, and creators for tasks like digital art,
+            branding, and concept visualization.
           </Text>
 
           {/* Try Now Button */}
@@ -104,8 +107,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 230,
+    height: 230,
     marginBottom: 20,
   },
   title: {

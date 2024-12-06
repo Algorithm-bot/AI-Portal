@@ -59,11 +59,14 @@ const bluewillow = ({ navigation }) => {
             BlueWillow: AI Art's Rebellious Canvas
           </Text>
           <Text style={styles.description}>
-            Designers, artists, and dreamers can transform text prompts into
-            stunning visuals, pushing the limits of digital imagination with
-            unexpected, vibrant results. Unlike traditional tools, BlueWillow
-            offers a more accessible, community-driven approach to AI art
-            creation. It's where technology meets pure creative freedom.
+            BlueWillow is a generative AI tool that creates images from text
+            prompts, similar to tools like MidJourney. It was developed by
+            BlueWillow AI and launched in 2023. Known for its ease of use and
+            accessible features, it caters to designers, marketers, and content
+            creators seeking high-quality visuals for branding, marketing, or
+            creative projects. BlueWillow is gaining popularity for its
+            versatility and cost-effective solutions, appealing to both
+            beginners and professionals.
           </Text>
 
           {/* Try Now Button */}
@@ -106,15 +109,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

@@ -6,9 +6,9 @@ const Screen3 = ({navigation}) => {
   const websites = [
     {
       id: '1',
-      title: 'invideo',
+      title: 'InVideo',
       image: require('./assets/images/video/invideo.png'),
-      screen: 'Invideo',
+      screen: 'InVideo',
   },
   {
       id: '2',

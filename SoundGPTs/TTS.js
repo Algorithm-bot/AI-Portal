@@ -56,15 +56,17 @@ const TTS = ({ navigation }) => {
 
           {/* Description */}
           <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
+            Digital Voices: OpenAI's TTS Revolution
           </Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            TTS by OpenAI leverages its whisper model to convert text into
+            speech with high accuracy and natural-sounding voices. It allows
+            developers to integrate text-to-speech capabilities into their
+            applications, making it ideal for virtual assistants, accessibility
+            tools, and content creators. OpenAI, founded in 2015, has been a
+            leader in AI research and development. The TTS feature is popular
+            for its ability to handle multiple languages and accents with
+            high-quality output.
           </Text>
 
           {/* Try Now Button */}
@@ -107,7 +109,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
+    width: 230,
     height: 200,
     marginBottom: 20,
   },
@@ -115,7 +117,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

@@ -49,7 +49,7 @@ const Flair = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/photo-generators/flair.png")}
+            source={require("../assets/images/photo-generators/flair_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
@@ -57,11 +57,12 @@ const Flair = ({ navigation }) => {
           {/* Description */}
           <Text style={styles.title}>Flair AI: Design Made Effortless</Text>
           <Text style={styles.description}>
-            Flair turns brand design into a one-click magic trick. This AI tool
-            transforms text prompts into professional marketing visuals, helping
-            businesses and creators craft stunning graphics without design
-            expertise. It's like having a graphic designer and creative director
-            rolled into one smart, instant platform.
+             Flair AI is an AI-powered design tool
+            developed by Flair AI in 2023. It specializes in creating
+            professional-quality branded content, such as product mockups and
+            marketing visuals, from user inputs. Ideal for marketers, social
+            media managers, and branding teams, it streamlines content creation
+            with customizable and visually appealing outputs.
           </Text>
 
           {/* Try Now Button */}
@@ -104,15 +105,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 240,
+    height: 240,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

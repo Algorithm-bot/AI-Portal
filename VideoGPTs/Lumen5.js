@@ -47,22 +47,21 @@ const Lumen5 = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/video/lumen.png")}
+            source={require("../assets/images/video/lumen5.jpg")}
             style={styles.image}
             resizeMode="contain"
           />
 
           {/* Description */}
           <Text style={styles.title}>
-            Lumen5: Empowering Content Creation with AI-Driven Video Production
+            Lumen5: Empowering Content Creation
           </Text>
           <Text style={styles.description}>
-            Lumen5 is an AI-powered video creation platform that enables users
-            to transform text-based content into engaging videos. Developed by
-            Lumen5 Inc., it caters to marketers, educators, and content creators
-            seeking efficient video production solutions. Users can input
-            scripts or URLs, and Lumen5 automatically generates videos with
-            relevant visuals, voiceovers, and captions.
+            Lumen5, founded in 2017, is developed by Lumen5 Inc., a company
+            focused on AI-powered video creation. Its platform is popular for
+            its user-friendly interface and quick video production capabilities,
+            particularly for businesses and creators seeking to turn written
+            content into compelling videos for marketing and social media.
           </Text>
 
           {/* Try Now Button */}
@@ -105,15 +104,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 180,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

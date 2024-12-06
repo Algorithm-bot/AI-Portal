@@ -49,7 +49,7 @@ const NightCafe = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/photo-generators/NightCafe.png")}
+            source={require("../assets/images/photo-generators/NightCafe_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
@@ -57,10 +57,12 @@ const NightCafe = ({ navigation }) => {
           {/* Description */}
           <Text style={styles.title}>NightCafe: AI Art's Infinite Canvas</Text>
           <Text style={styles.description}>
-            A digital playground where creativity knows no bounds, NightCafe
-            turns text into mesmerizing artwork. It's not just an AI
-            generator—it's a portal where your imagination becomes visual
-            poetry, crafting unique masterpieces with each prompt.
+            NightCafe AI, is a generative AI tool that creates stunning digital
+            artwork from text prompts. It supports multiple art styles,
+            including photorealism, abstract, and surrealism. Popular among
+            hobbyists, artists, and content creators. Launched in 2019, it has gained
+            widespread appeal for producing unique, high-quality visuals with
+            ease, catering to both casual users and professionals.
           </Text>
 
           {/* Try Now Button */}
@@ -104,14 +106,14 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 200,
-    height: 200,
+    height: 150,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

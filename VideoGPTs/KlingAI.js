@@ -47,7 +47,7 @@ const KlingAI = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/video/kling.jpg")}
+            source={require("../assets/images/video/kling_bg.jpg")}
             style={styles.image}
             resizeMode="contain"
           />
@@ -57,13 +57,13 @@ const KlingAI = ({ navigation }) => {
             Kling AI: Redefining Video Creation with AI Magic
           </Text>
           <Text style={styles.description}>
-            KlingAI, developed by Kuaishou's AI team, is an advanced
-            text-to-video generation tool that transforms textual prompts into
-            high-quality videos. It's ideal for content creators, marketers, and
-            educators seeking efficient video production. With features like
-            motion brush and auto segmentation, KlingAI offers intuitive video
-            creation. Its user-friendly interface and innovative capabilities
-            have contributed to its growing popularity.
+            Kling AI, developed by Kuaishou, is a text-to-video model that
+            generates videos based on textual descriptions. Launched in June
+            2024, it produces videos up to two minutes long at 30 frames per
+            second in 1080p resolution. Kling AI is accessible globally,
+            requiring only an email address for registration. It is particularly
+            popular among content creators, marketers, and educators seeking
+            efficient video production tools.
           </Text>
 
           {/* Try Now Button */}
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
+    width: 240,
     height: 200,
     marginBottom: 20,
   },
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

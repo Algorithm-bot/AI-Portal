@@ -56,15 +56,15 @@ const ElevenLabs = ({ navigation }) => {
 
           {/* Description */}
           <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
+            Beyond Robotic Voices: Eleven Labs Human-Like AI Sound
           </Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            Founded in 2022, Eleven Labs offers a cutting-edge text-to-audio
+            (speech synthesis) feature that converts text into high-quality,
+            natural-sounding speech. It allows users to generate realistic
+            voiceovers, audiobooks, and podcasts with customizable voices and
+            tones, making it ideal for content creators, marketers, and
+            educators.
           </Text>
 
           {/* Try Now Button */}
@@ -107,15 +107,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 180,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

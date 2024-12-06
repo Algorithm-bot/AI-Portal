@@ -57,11 +57,12 @@ const Ideogram = ({ navigation }) => {
             Ideogram: AI Art's Creative Playground
           </Text>
           <Text style={styles.description}>
-            More than just an image generator, Ideogram reimagines how we create
-            visual content. This AI turns text prompts into stunning,
-            imaginative artwork, blending cutting-edge technology with boundless
-            creativity. It's not just about generating images – it's about
-            bringing your wildest visual ideas to life.
+            The Ideogram text-to-image feature was developed by Ideogram AI, a
+            company founded by former Google Brain researchers, in August
+            2023.The Ideogram text-to-image feature creates images from written
+            text, combining words and visuals creatively. It’s popular for
+            making logos, posters, or artistic designs. Best suited for
+            designers, marketers, and content creators.
           </Text>
 
           {/* Try Now Button */}
@@ -104,15 +105,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

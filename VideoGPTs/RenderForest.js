@@ -47,25 +47,22 @@ const RenderForest = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/video/RenderForest.png")}
+            source={require("../assets/images/video/RenderForest_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
 
           {/* Description */}
           <Text style={styles.title}>
-            Renderforest: Comprehensive Design and Video Creation Platform
+            Renderforest: Transforming Ideas into Stunning Visual Stories
           </Text>
           <Text style={styles.description}>
-            Renderforest is an all-in-one online platform that offers a wide
-            array of design tools, including video creation, animations,
-            branding, mockups, presentations, graphics, and professional website
-            development. Catering to businesses, marketers, and content
-            creators, it provides user-friendly solutions for producing
-            high-quality visual content without the need for extensive design
-            expertise. With over 25 million users and more than 50 million
-            projects created, Renderforest has established itself as a popular
-            choice for those seeking efficient and accessible design solutions.
+            Renderforest Caters to businesses, marketers, and content creators,
+            it provides user-friendly solutions for producing high-quality
+            visual content without the need for extensive design expertise. With
+            over 25 million users and more than 50 million projects created,
+            Renderforest has established itself as a popular choice for those
+            seeking efficient and accessible design solutions.
           </Text>
 
           {/* Try Now Button */}
@@ -108,15 +105,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 230,
+    height: 180,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

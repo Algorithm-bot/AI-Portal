@@ -49,7 +49,7 @@ const AD = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/photo-generators/AD.png")}
+            source={require("../assets/images/photo-generators/AD_bg.png")}
             style={styles.image}
             resizeMode="contain"
           />
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

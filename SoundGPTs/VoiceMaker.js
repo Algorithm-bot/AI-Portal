@@ -49,22 +49,20 @@ const VoiceMaker = ({ navigation }) => {
           </TouchableOpacity>
 
           <Image
-            source={require("../assets/images/audio/voicemaker.webp")}
+            source={require("../assets/images/audio/voicemaker_bg.gif")}
             style={styles.image}
             resizeMode="contain"
           />
 
           {/* Description */}
           <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
+          MurfAI: Sculpting Digital Voices
           </Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            Voicemaker is a text-to-speech (TTS) AI tool that converts written
+            text into natural-sounding audio. It offers customizable voice
+            options, including different languages, accents, and speech speeds,
+            making it ideal for creating voiceovers, podcasts, and audiobooks.
           </Text>
 
           {/* Try Now Button */}
@@ -107,7 +105,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   image: {
-    width: 200,
+    width: 250,
     height: 200,
     marginBottom: 20,
   },
@@ -115,7 +113,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {

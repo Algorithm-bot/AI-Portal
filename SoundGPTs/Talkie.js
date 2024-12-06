@@ -56,15 +56,15 @@ const Talkie = ({ navigation }) => {
 
           {/* Description */}
           <Text style={styles.title}>
-          Adobe Firefly: Creativity Unleashed by AI
-
+            Talkie: When Machines Converse Beyond Code
           </Text>
           <Text style={styles.description}>
-            Adobe Firefly transforms digital creativity, enabling artists and
-            designers to generate, edit, and reimagine visual content with
-            unprecedented ease. This AI-powered tool turns text prompts into
-            stunning images, seamlessly integrating with Adobe's creative
-            ecosystem to revolutionize digital design.
+            Talkie is a text-to-speech (TTS) application designed to convert
+            written text into spoken words, enhancing accessibility and
+            communication. It supports multiple languages and offers various
+            voice options, catering to diverse user needs. Talkie is
+            particularly beneficial for individuals with speech impairments,
+            educators, and professionals requiring quick voice outputs.
           </Text>
 
           {/* Try Now Button */}
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: "white",
-    marginBottom: 10,
+    marginBottom: 20,
     textAlign: "center",
   },
   description: {
