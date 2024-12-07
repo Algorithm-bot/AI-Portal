@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
 import { WebView } from "react-native-webview";
-import Icon from "react-native-vector-icons/MaterialIcons"; // Import Icon from MaterialIcons
 
-const MurfAI = ({ navigation }) => {
+const MurfAI = () => {
   const [showWebView, setShowWebView] = useState(false);
 
   const handleTryNow = () => {
@@ -15,17 +14,8 @@ const MurfAI = ({ navigation }) => {
       {showWebView ? (
         // WebView Screen
         <View style={{ flex: 1 }}>
-          {/* Header with Go Back Button */}
-          <View style={styles.header}>
-            {/* Go Back Button with Icon */}
-            <TouchableOpacity
-              onPress={() => navigation.goBack()}
-              style={styles.goBackButtonContainer}
-            >
-              <Icon name="arrow-back" size={30} color="white" />{" "}
-              {/* Adjust icon size */}
-            </TouchableOpacity>
-          </View>
+          {/* Status Bar Background */}
+          <View style={styles.statusBarBackground} />
 
           {/* WebView */}
           <WebView
@@ -38,16 +28,6 @@ const MurfAI = ({ navigation }) => {
       ) : (
         // Description Screen
         <View style={styles.container}>
-          {/* Go Back Button */}
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            style={styles.goBackButtonContainer}
-          >
-            <Icon name="arrow-back" size={25} color="white" />{" "}
-            {/* Adjust icon size */}
-            <Text style={styles.goBackText}>Go Back</Text>
-          </TouchableOpacity>
-
           <Image
             source={require("../assets/images/audio/murfAI.png")}
             style={styles.image}
@@ -56,16 +36,16 @@ const MurfAI = ({ navigation }) => {
 
           {/* Description */}
           <Text style={styles.title}>
-          MurfAI: Sculpting Digital Voices
+            MurfAI: Sculpting Digital Voices
           </Text>
           <Text style={styles.description}>
-            Murf AI  generates lifelike
-            speech from text, offering a wide range of voices and accents. It is
-            designed to create realistic voiceovers for presentations, podcasts,
-            audiobooks, and more. Users can also adjust tone, speed, and pitch
-            to customize the audio output. Launched in 2020, Murf AI has gained
-            popularity among content creators, marketers, and professionals for
-            its ability to produce high-quality audio with minimal effort.
+            Murf AI generates lifelike speech from text, offering a wide range
+            of voices and accents. It is designed to create realistic
+            voiceovers for presentations, podcasts, audiobooks, and more. Users
+            can also adjust tone, speed, and pitch to customize the audio output.
+            Launched in 2020, Murf AI has gained popularity among content
+            creators, marketers, and professionals for its ability to produce
+            high-quality audio with minimal effort.
           </Text>
 
           {/* Try Now Button */}
@@ -79,27 +59,6 @@ const MurfAI = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#000", // Black background for the header
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  goBackButtonContainer: {
-    position: "absolute",
-    top: 40,
-    left: 35,
-    zIndex: 10,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  goBackText: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "bold",
-    marginLeft: 10, // Add space between the icon and the text
-  },
   container: {
     flex: 1,
     alignItems: "center",
@@ -136,6 +95,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "white",
+  },
+  statusBarBackground: {
+    height: StatusBar.currentHeight || 20,
+    backgroundColor: "#404040", // Custom background color for the status bar
   },
 });
 

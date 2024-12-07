@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
 import { WebView } from "react-native-webview";
-import Icon from "react-native-vector-icons/MaterialIcons"; // Import Icon from MaterialIcons
 
-const Ideogram = ({ navigation }) => {
+const Ideogram = () => {
   const [showWebView, setShowWebView] = useState(false);
 
   const handleTryNow = () => {
@@ -15,17 +14,8 @@ const Ideogram = ({ navigation }) => {
       {showWebView ? (
         // WebView Screen
         <View style={{ flex: 1 }}>
-          {/* Header with Go Back Button */}
-          <View style={styles.header}>
-            {/* Go Back Button with Icon */}
-            <TouchableOpacity
-              onPress={() => navigation.goBack()}
-              style={styles.goBackButtonContainer}
-            >
-              <Icon name="arrow-back" size={30} color="white" />{" "}
-              {/* Adjust icon size */}
-            </TouchableOpacity>
-          </View>
+          {/* Status Bar Background */}
+          <View style={styles.statusBarBackground} />
 
           {/* WebView */}
           <WebView
@@ -36,16 +26,6 @@ const Ideogram = ({ navigation }) => {
       ) : (
         // Description Screen
         <View style={styles.container}>
-          {/* Go Back Button */}
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            style={styles.goBackButtonContainer}
-          >
-            <Icon name="arrow-back" size={25} color="white" />{" "}
-            {/* Adjust icon size */}
-            <Text style={styles.goBackText}>Go Back</Text>
-          </TouchableOpacity>
-
           <Image
             source={require("../assets/images/photo-generators/Ideogram.jpg")}
             style={styles.image}
@@ -59,7 +39,7 @@ const Ideogram = ({ navigation }) => {
           <Text style={styles.description}>
             The Ideogram text-to-image feature was developed by Ideogram AI, a
             company founded by former Google Brain researchers, in August
-            2023.The Ideogram text-to-image feature creates images from written
+            2023. The Ideogram text-to-image feature creates images from written
             text, combining words and visuals creatively. It’s popular for
             making logos, posters, or artistic designs. Best suited for
             designers, marketers, and content creators.
@@ -76,27 +56,6 @@ const Ideogram = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#000", // Black background for the header
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  goBackButtonContainer: {
-    position: "absolute",
-    top: 40,
-    left: 35,
-    zIndex: 10,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  goBackText: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "bold",
-    marginLeft: 10, // Add space between the icon and the text
-  },
   container: {
     flex: 1,
     alignItems: "center",
@@ -133,6 +92,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "white",
+  },
+  statusBarBackground: {
+    height: StatusBar.currentHeight || 20,
+    backgroundColor: "#404040",
   },
 });
 

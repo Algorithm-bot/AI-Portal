@@ -1,37 +1,24 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
 import { WebView } from "react-native-webview";
-import Icon from "react-native-vector-icons/MaterialIcons"; // Import Icon from MaterialIcons
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 const Chatsonic = ({ navigation }) => {
   const [showWebView, setShowWebView] = useState(false);
 
   const handleTryNow = () => {
-    setShowWebView(true); // Show WebView when "Try Now" is pressed
+    setShowWebView(true);
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: "#000" }}>
+    <View style={{ flex: 1, backgroundColor: "#808080" }}>
       {showWebView ? (
         // WebView Screen
         <View style={{ flex: 1 }}>
-          {/* Header with Go Back Button */}
-          <View style={styles.header}>
-            {/* Go Back Button with Icon */}
-            <TouchableOpacity
-              onPress={() => navigation.goBack()}
-              style={styles.goBackButtonContainer}
-            >
-              <Icon name="arrow-back" size={30} color="white" />{" "}
-              {/* Adjust icon size */}
-            </TouchableOpacity>
-          </View>
-
-          {/* WebView */}
-          <WebView
-            source={{ uri: "https://writesonic.com/chat" }}
-            style={{ flex: 1 }}
-          />
+          
+          
+          <View style={styles.statusBarBackground} />
+          <WebView source={{ uri: "https://writesonic.com/chat" }} style={{ flex: 1 }} />
         </View>
       ) : (
         // Description Screen
@@ -41,8 +28,7 @@ const Chatsonic = ({ navigation }) => {
             onPress={() => navigation.goBack()}
             style={styles.goBackButtonContainer}
           >
-            <Icon name="arrow-back" size={25} color="white" />{" "}
-            {/* Adjust icon size */}
+            <Icon name="arrow-back" size={25} color="white" />
             <Text style={styles.goBackText}>Go Back</Text>
           </TouchableOpacity>
 
@@ -61,7 +47,7 @@ const Chatsonic = ({ navigation }) => {
             language models to provide human-like responses, making it useful
             for content creators, marketers, and anyone in need of quick,
             intelligent assistance. ChatSonic can help write blog posts, create
-            social media captions, or even generate code
+            social media captions, or even generate code.
           </Text>
 
           {/* Try Now Button */}
@@ -75,12 +61,9 @@ const Chatsonic = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#000", // Black background for the header
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    flexDirection: "row",
-    alignItems: "center",
+  statusBarBackground: {
+    height: StatusBar.currentHeight || 20, // Ensures a thin black bar at the top
+    backgroundColor: "	#404040",
   },
   goBackButtonContainer: {
     position: "absolute",
@@ -94,7 +77,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 16,
     fontWeight: "bold",
-    marginLeft: 10, // Add space between the icon and the text
+    marginLeft: 10,
   },
   container: {
     flex: 1,
