@@ -1,57 +1,48 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
-import { WebView } from "react-native-webview";
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar, Alert } from "react-native";
+import * as WebBrowser from "expo-web-browser";
 
 const Colossyan = () => {
-  const [showWebView, setShowWebView] = useState(false);
-
-  const handleTryNow = () => {
-    setShowWebView(true); // Show WebView when "Try Now" is pressed
+  const handleTryNow = async () => {
+    try {
+      const result = await WebBrowser.openBrowserAsync("https://www.colossyan.com/");
+      if (result.type !== "opened") {
+        Alert.alert("Error", "Unable to open the link. Please try again.");
+      }
+    } catch (error) {
+      Alert.alert("Error", "An unexpected error occurred. Please try again.");
+    }
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#000" }}>
-      {showWebView ? (
-        // WebView Screen
-        <View style={{ flex: 1 }}>
-          {/* Status Bar Background */}
-          <View style={styles.statusBarBackground} />
+      <StatusBar barStyle="light-content" backgroundColor="#404040" />
+      <View style={styles.container}>
+        <Image
+          source={require("../assets/images/video/colossyan_bg.png")}
+          style={styles.image}
+          resizeMode="contain"
+        />
 
-          {/* WebView */}
-          <WebView
-            source={{ uri: "https://www.colossyan.com/" }}
-            style={{ flex: 1 }}
-          />
-        </View>
-      ) : (
-        // Description Screen
-        <View style={styles.container}>
-          <Image
-            source={require("../assets/images/video/colossyan_bg.png")}
-            style={styles.image}
-            resizeMode="contain"
-          />
+        {/* Description */}
+        <Text style={styles.title}>
+          Colossyan: Transforming Corporate Communication with AI-Generated
+          Videos
+        </Text>
+        <Text style={styles.description}>
+          Colossyan is an AI video platform designed to streamline video
+          creation for workplace learning and corporate communications. Users
+          can generate videos from text using AI avatars, facilitating
+          efficient training, onboarding, and internal communications and
+          personalized AI video content in over 70 languages, enhancing
+          engagement and accessibility.
+        </Text>
 
-          {/* Description */}
-          <Text style={styles.title}>
-            Colossyan: Transforming Corporate Communication with AI-Generated
-            Videos
-          </Text>
-          <Text style={styles.description}>
-            Colossyan is an AI video platform designed to streamline video
-            creation for workplace learning and corporate communications. Users
-            can generate videos from text using AI avatars, facilitating
-            efficient training, onboarding, and internal communications and
-            personalized AI video content in over 70 languages, enhancing
-            engagement and accessibility.
-          </Text>
-
-          {/* Try Now Button */}
-          <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
-            <Text style={styles.tryNowButtonText}>TRY NOW</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        {/* Try Now Button */}
+        <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
+          <Text style={styles.tryNowButtonText}>TRY NOW</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

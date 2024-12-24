@@ -1,56 +1,47 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
-import { WebView } from "react-native-webview";
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar, Alert } from "react-native";
+import * as WebBrowser from "expo-web-browser";
 
 const DeepbrainAI = () => {
-  const [showWebView, setShowWebView] = useState(false);
-
-  const handleTryNow = () => {
-    setShowWebView(true); // Show WebView when "Try Now" is pressed
+  const handleTryNow = async () => {
+    try {
+      const result = await WebBrowser.openBrowserAsync("https://app.aistudios.com/dashboard");
+      if (result.type !== "opened") {
+        Alert.alert("Error", "Unable to open the link. Please try again.");
+      }
+    } catch (error) {
+      Alert.alert("Error", "An unexpected error occurred. Please try again.");
+    }
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#000" }}>
-      {showWebView ? (
-        // WebView Screen
-        <View style={{ flex: 1 }}>
-          {/* Status Bar Background */}
-          <View style={styles.statusBarBackground} />
+      <StatusBar barStyle="light-content" backgroundColor="#404040" />
+      <View style={styles.container}>
+        <Image
+          source={require("../assets/images/video/DeepBrain.webp")}
+          style={styles.image}
+          resizeMode="contain"
+        />
 
-          {/* WebView */}
-          <WebView
-            source={{ uri: "https://app.aistudios.com/dashboard" }}
-            style={{ flex: 1 }}
-          />
-        </View>
-      ) : (
-        // Description Screen
-        <View style={styles.container}>
-          <Image
-            source={require("../assets/images/video/DeepBrain.webp")}
-            style={styles.image}
-            resizeMode="contain"
-          />
+        {/* Description */}
+        <Text style={styles.title}>
+          DeepBrain AI: Empowering Content Creation with Advanced AI Avatars
+        </Text>
+        <Text style={styles.description}>
+          DeepBrain AI, founded in 2016, is a South Korea-based company
+          specializing in AI-powered virtual humans and video synthesis
+          technology. DeepBrain AI's text-to-video feature converts written
+          scripts into videos using realistic AI-generated avatars and
+          voiceovers. It supports multiple languages, making it ideal for
+          corporate training, e-learning, and marketing.
+        </Text>
 
-          {/* Description */}
-          <Text style={styles.title}>
-            DeepBrain AI: Empowering Content Creation with Advanced AI Avatars
-          </Text>
-          <Text style={styles.description}>
-            DeepBrain AI, founded in 2016, is a South Korea-based company
-            specializing in AI-powered virtual humans and video synthesis
-            technology. DeepBrain AI's text-to-video feature converts written
-            scripts into videos using realistic AI-generated avatars and
-            voiceovers. It supports multiple languages, making it ideal for
-            corporate training, e-learning, and marketing.
-          </Text>
-
-          {/* Try Now Button */}
-          <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
-            <Text style={styles.tryNowButtonText}>TRY NOW</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        {/* Try Now Button */}
+        <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
+          <Text style={styles.tryNowButtonText}>TRY NOW</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -92,10 +83,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "white",
-  },
-  statusBarBackground: {
-    height: StatusBar.currentHeight || 20,
-    backgroundColor: "#404040", // Custom background color for the status bar
   },
 });
 

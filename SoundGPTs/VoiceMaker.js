@@ -36,7 +36,7 @@ const VoiceMaker = () => {
 
           {/* Description */}
           <Text style={styles.title}>
-            MurfAI: Sculpting Digital Voices
+            VoiceMaker: Sculpting Digital Voices
           </Text>
           <Text style={styles.description}>
             Voicemaker is a text-to-speech (TTS) AI tool that converts written

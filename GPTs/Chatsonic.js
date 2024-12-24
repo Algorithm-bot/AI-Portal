@@ -1,61 +1,50 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
-import { WebView } from "react-native-webview";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import * as WebBrowser from 'expo-web-browser'; // Importing WebBrowser
 
 const Chatsonic = ({ navigation }) => {
-  const [showWebView, setShowWebView] = useState(false);
-
-  const handleTryNow = () => {
-    setShowWebView(true);
+  const handleTryNow = async () => {
+    // Open the URL in the device's default browser
+    await WebBrowser.openBrowserAsync("https://writesonic.com/chat");
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#808080" }}>
-      {showWebView ? (
-        // WebView Screen
-        <View style={{ flex: 1 }}>
-          
-          
-          <View style={styles.statusBarBackground} />
-          <WebView source={{ uri: "https://writesonic.com/chat" }} style={{ flex: 1 }} />
-        </View>
-      ) : (
-        // Description Screen
-        <View style={styles.container}>
-          {/* Go Back Button */}
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            style={styles.goBackButtonContainer}
-          >
-            <Icon name="arrow-back" size={25} color="white" />
-            <Text style={styles.goBackText}>Go Back</Text>
-          </TouchableOpacity>
+      {/* Description Screen */}
+      <View style={styles.container}>
+        {/* Go Back Button */}
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.goBackButtonContainer}
+        >
+          <Icon name="arrow-back" size={25} color="white" />
+          <Text style={styles.goBackText}>Go Back</Text>
+        </TouchableOpacity>
 
-          <Image
-            source={require("../assets/images/chatbots/chatsonic.jpg")}
-            style={styles.image}
-            resizeMode="contain"
-          />
+        <Image
+          source={require("../assets/images/chatbots/chatsonic.jpg")}
+          style={styles.image}
+          resizeMode="contain"
+        />
 
-          {/* Description */}
-          <Text style={styles.title}>Chatsonic: Your AI Creative Catalyst</Text>
-          <Text style={styles.description}>
-            ChatSonic is an AI-powered chatbot developed by Writesonic, designed
-            to assist users with a variety of tasks such as generating content,
-            answering questions, and brainstorming ideas. It uses advanced
-            language models to provide human-like responses, making it useful
-            for content creators, marketers, and anyone in need of quick,
-            intelligent assistance. ChatSonic can help write blog posts, create
-            social media captions, or even generate code.
-          </Text>
+        {/* Description */}
+        <Text style={styles.title}>Chatsonic: Your AI Creative Catalyst</Text>
+        <Text style={styles.description}>
+          ChatSonic is an AI-powered chatbot developed by Writesonic, designed
+          to assist users with a variety of tasks such as generating content,
+          answering questions, and brainstorming ideas. It uses advanced
+          language models to provide human-like responses, making it useful
+          for content creators, marketers, and anyone in need of quick,
+          intelligent assistance. ChatSonic can help write blog posts, create
+          social media captions, or even generate code.
+        </Text>
 
-          {/* Try Now Button */}
-          <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
-            <Text style={styles.tryNowButtonText}>TRY NOW</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        {/* Try Now Button */}
+        <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
+          <Text style={styles.tryNowButtonText}>TRY NOW</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -63,7 +52,7 @@ const Chatsonic = ({ navigation }) => {
 const styles = StyleSheet.create({
   statusBarBackground: {
     height: StatusBar.currentHeight || 20, // Ensures a thin black bar at the top
-    backgroundColor: "	#404040",
+    backgroundColor: "#404040",
   },
   goBackButtonContainer: {
     position: "absolute",

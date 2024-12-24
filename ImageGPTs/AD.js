@@ -1,56 +1,47 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
-import { WebView } from "react-native-webview";
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar, Alert } from "react-native";
+import * as WebBrowser from "expo-web-browser";
 
 const AD = () => {
-  const [showWebView, setShowWebView] = useState(false);
+  const openSecureBrowser = async () => {
+    const url = "https://sketch.metademolab.com/canvas";
 
-  const handleTryNow = () => {
-    setShowWebView(true); // Show WebView when "Try Now" is pressed
+    try {
+      const result = await WebBrowser.openBrowserAsync(url);
+      if (result.type !== "opened") {
+        Alert.alert("Error", "Failed to open the browser. Please try again.");
+      }
+    } catch (error) {
+      Alert.alert("Error", "An unexpected error occurred. Please try again.");
+    }
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#000" }}>
-      {showWebView ? (
-        // WebView Screen
-        <View style={{ flex: 1 }}>
-          {/* Status Bar Background */}
-          <View style={styles.statusBarBackground} />
+      {/* Description Screen */}
+      <View style={styles.container}>
+        <Image
+          source={require("../assets/images/photo-generators/AD_bg.png")}
+          style={styles.image}
+          resizeMode="contain"
+        />
 
-          {/* WebView */}
-          <WebView
-            source={{
-              uri: "https://sketch.metademolab.com/canvas",
-            }}
-            style={{ flex: 1 }}
-          />
-        </View>
-      ) : (
-        // Description Screen
-        <View style={styles.container}>
-          <Image
-            source={require("../assets/images/photo-generators/AD_bg.png")}
-            style={styles.image}
-            resizeMode="contain"
-          />
+        {/* Description */}
+        <Text style={styles.title}>
+          AD: Turning Doodles into Dancing Stars
+        </Text>
+        <Text style={styles.description}>
+          Meta’s new AI, Animated Drawings, can transform your simple sketches
+          into lively, moving characters. Just upload your drawing, and watch
+          as the AI identifies limbs, adds motion, and brings your art to
+          life—whether it’s walking, dancing, or jumping!
+        </Text>
 
-          {/* Description */}
-          <Text style={styles.title}>
-            AD: Turning Doodles into Dancing Stars
-          </Text>
-          <Text style={styles.description}>
-            Meta’s new AI, Animated Drawings, can transform your simple sketches
-            into lively, moving characters. Just upload your drawing, and watch
-            as the AI identifies limbs, adds motion, and brings your art to
-            life—whether it’s walking, dancing, or jumping!
-          </Text>
-
-          {/* Try Now Button */}
-          <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
-            <Text style={styles.tryNowButtonText}>TRY NOW</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        {/* Try Now Button */}
+        <TouchableOpacity onPress={openSecureBrowser} style={styles.tryNowButton}>
+          <Text style={styles.tryNowButtonText}>TRY NOW</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -92,10 +83,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "white",
-  },
-  statusBarBackground: {
-    height: StatusBar.currentHeight || 20,
-    backgroundColor: "#404040", // Custom background color for the status bar
   },
 });
 

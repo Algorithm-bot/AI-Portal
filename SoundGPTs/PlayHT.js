@@ -1,57 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
-import { WebView } from "react-native-webview";
+import * as WebBrowser from "expo-web-browser";
 
 const PlayHT = () => {
-  const [showWebView, setShowWebView] = useState(false);
-
-  const handleTryNow = () => {
-    setShowWebView(true); // Show WebView when "Try Now" is pressed
+  const handleTryNow = async () => {
+    // Open URL in the device's default browser or in-app browser
+    await WebBrowser.openBrowserAsync("https://play.ht/");
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#000" }}>
-      {showWebView ? (
-        // WebView Screen
-        <View style={{ flex: 1 }}>
-          {/* Status Bar Background */}
-          <View style={styles.statusBarBackground} />
+      {/* Description Screen */}
+      <View style={styles.container}>
+        <Image
+          source={require("../assets/images/audio/playht2.png")}
+          style={styles.image}
+          resizeMode="contain"
+        />
 
-          {/* WebView */}
-          <WebView
-            source={{
-              uri: "https://play.ht/",
-            }}
-            style={{ flex: 1 }}
-          />
-        </View>
-      ) : (
-        // Description Screen
-        <View style={styles.container}>
-          <Image
-            source={require("../assets/images/audio/playht2.png")}
-            style={styles.image}
-            resizeMode="contain"
-          />
+        {/* Description */}
+        <Text style={styles.title}>PlayHT: Audio AI's New Frontier</Text>
+        <Text style={styles.description}>
+          PlayHT converts text into lifelike speech, offering a wide range of
+          natural-sounding voices and languages. It allows users to create
+          voiceovers for podcasts, audiobooks, presentations, and more, with
+          options to customize tone, pitch, and speed. Launched in 2020, PlayHT
+          has gained popularity among podcasters, content creators, and
+          businesses for its high-quality, easy-to-use voice generation
+          capabilities.
+        </Text>
 
-          {/* Description */}
-          <Text style={styles.title}>PlayHT: Audio AI's New Frontier</Text>
-          <Text style={styles.description}>
-            PlayHT converts text into lifelike speech, offering a wide range of
-            natural-sounding voices and languages. It allows users to create
-            voiceovers for podcasts, audiobooks, presentations, and more, with
-            options to customize tone, pitch, and speed. Launched in 2020, PlayHT
-            has gained popularity among podcasters, content creators, and
-            businesses for its high-quality, easy-to-use voice generation
-            capabilities.
-          </Text>
-
-          {/* Try Now Button */}
-          <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
-            <Text style={styles.tryNowButtonText}>TRY NOW</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        {/* Try Now Button */}
+        <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
+          <Text style={styles.tryNowButtonText}>TRY NOW</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -93,10 +76,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "white",
-  },
-  statusBarBackground: {
-    height: StatusBar.currentHeight || 20,
-    backgroundColor: "#404040", // Custom background color for the status bar
   },
 });
 

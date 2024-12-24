@@ -1,57 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
-import { WebView } from "react-native-webview";
+import * as WebBrowser from "expo-web-browser";
 
 const Claude = () => {
-  const [showWebView, setShowWebView] = useState(false);
-
-  const handleTryNow = () => {
-    setShowWebView(true); // Show WebView when "Try Now" is pressed
+  const handleTryNow = async () => {
+    // Open the URL in the device's default browser or in-app browser
+    await WebBrowser.openBrowserAsync("https://claude.ai/new");
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#000" }}>
-      {showWebView ? (
-        // WebView Screen
-        <View style={{ flex: 1 }}>
-          {/* Status Bar Background */}
-          <View style={styles.statusBarBackground} />
-          
-          {/* WebView */}
-          <WebView
-            source={{ uri: "https://claude.ai/new" }}
-            style={{ flex: 1 }}
-          />
-        </View>
-      ) : (
-        // Description Screen
-        <View style={styles.container}>
-          <Image
-            source={require("../assets/images/chatbots/claude.png")}
-            style={styles.image}
-            resizeMode="contain"
-          />
+      {/* Description Screen */}
+      <View style={styles.container}>
+        <Image
+          source={require("../assets/images/chatbots/claude.png")}
+          style={styles.image}
+          resizeMode="contain"
+        />
 
-          {/* Description */}
-          <Text style={styles.title}>
-            Claude: The AI Revolution's Brainy Sidekick
-          </Text>
-          <Text style={styles.description}>
-            Claude AI, developed by Anthropic, is a smart assistant designed to
-            help with writing, learning, and problem-solving. It can understand
-            and respond to questions, assist with tasks like summarizing
-            documents or brainstorming ideas, and even help write creative
-            content. Claude AI is easy to use, making it a helpful tool for
-            students, professionals, and anyone looking for quick and reliable
-            assistance.
-          </Text>
+        {/* Description */}
+        <Text style={styles.title}>Claude: The AI Revolution's Brainy Sidekick</Text>
+        <Text style={styles.description}>
+          Claude AI, developed by Anthropic, is a smart assistant designed to
+          help with writing, learning, and problem-solving. It can understand
+          and respond to questions, assist with tasks like summarizing
+          documents or brainstorming ideas, and even help write creative
+          content. Claude AI is easy to use, making it a helpful tool for
+          students, professionals, and anyone looking for quick and reliable
+          assistance.
+        </Text>
 
-          {/* Try Now Button */}
-          <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
-            <Text style={styles.tryNowButtonText}>TRY NOW</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        {/* Try Now Button */}
+        <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
+          <Text style={styles.tryNowButtonText}>TRY NOW</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

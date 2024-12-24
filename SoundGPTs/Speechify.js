@@ -1,60 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
-import { WebView } from "react-native-webview";
+import * as WebBrowser from "expo-web-browser";
 
 const Speechify = () => {
-  const [showWebView, setShowWebView] = useState(false);
-
-  const handleTryNow = () => {
-    setShowWebView(true); // Show WebView when "Try Now" is pressed
+  const handleTryNow = async () => {
+    // Open the URL in the device's default browser or in-app browser
+    await WebBrowser.openBrowserAsync("https://speechify.com/");
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#000" }}>
-      {showWebView ? (
-        // WebView Screen
-        <View style={{ flex: 1 }}>
-          {/* Status Bar Background */}
-          <View style={styles.statusBarBackground} />
+      {/* Description Screen */}
+      <View style={styles.container}>
+        <Image
+          source={require("../assets/images/audio/speechify.jpg")}
+          style={styles.image}
+          resizeMode="contain"
+        />
 
-          {/* WebView */}
-          <WebView
-            source={{
-              uri: "https://speechify.com/",
-            }}
-            style={{ flex: 1 }}
-          />
-        </View>
-      ) : (
-        // Description Screen
-        <View style={styles.container}>
-          <Image
-            source={require("../assets/images/audio/speechify.jpg")}
-            style={styles.image}
-            resizeMode="contain"
-          />
+        {/* Description */}
+        <Text style={styles.title}>Text to Voice, Instantly: Speechify's Magic</Text>
+        <Text style={styles.description}>
+          Speechify is designed to turn text into high-quality,
+          natural-sounding audio. It provides a variety of voices and
+          languages, allowing for customization of pitch, speed, and tone.
+          Ideal for users looking to convert articles, eBooks, and documents
+          into audio format, it also supports a wide range of use cases, from
+          personal productivity to educational applications. Speechify is
+          popular among students, professionals, and those with learning
+          disabilities.
+        </Text>
 
-          {/* Description */}
-          <Text style={styles.title}>
-            Text to Voice, Instantly: Speechify's Magic
-          </Text>
-          <Text style={styles.description}>
-            Speechify is designed to turn text into high-quality,
-            natural-sounding audio. It provides a variety of voices and
-            languages, allowing for customization of pitch, speed, and tone.
-            Ideal for users looking to convert articles, eBooks, and documents
-            into audio format, it also supports a wide range of use cases, from
-            personal productivity to educational applications. Speechify is
-            popular among students, professionals, and those with learning
-            disabilities.
-          </Text>
-
-          {/* Try Now Button */}
-          <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
-            <Text style={styles.tryNowButtonText}>TRY NOW</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        {/* Try Now Button */}
+        <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
+          <Text style={styles.tryNowButtonText}>TRY NOW</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -96,10 +77,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "white",
-  },
-  statusBarBackground: {
-    height: StatusBar.currentHeight || 20,
-    backgroundColor: "#404040", // Custom background color for the status bar
   },
 });
 

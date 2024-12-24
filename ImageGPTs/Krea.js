@@ -1,55 +1,46 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
-import { WebView } from "react-native-webview";
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar, Alert } from "react-native";
+import * as WebBrowser from "expo-web-browser";
 
 const Krea = () => {
-  const [showWebView, setShowWebView] = useState(false);
+  const openSecureBrowser = async () => {
+    const url = "https://www.krea.ai/apps/image/flux";
 
-  const handleTryNow = () => {
-    setShowWebView(true); // Show WebView when "Try Now" is pressed
+    try {
+      const result = await WebBrowser.openBrowserAsync(url);
+      if (result.type !== "opened") {
+        Alert.alert("Error", "Failed to open the browser. Please try again.");
+      }
+    } catch (error) {
+      Alert.alert("Error", "An unexpected error occurred. Please try again.");
+    }
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#000" }}>
-      {showWebView ? (
-        // WebView Screen
-        <View style={{ flex: 1 }}>
-          {/* Status Bar Background */}
-          <View style={styles.statusBarBackground} />
+      {/* Description Screen */}
+      <View style={styles.container}>
+        <Image
+          source={require("../assets/images/photo-generators/krea.jpg")}
+          style={styles.image}
+          resizeMode="contain"
+        />
 
-          {/* WebView */}
-          <WebView
-            source={{
-              uri: "https://www.krea.ai/apps/image/flux",
-            }}
-            style={{ flex: 1 }}
-          />
-        </View>
-      ) : (
-        // Description Screen
-        <View style={styles.container}>
-          <Image
-            source={require("../assets/images/photo-generators/krea.jpg")}
-            style={styles.image}
-            resizeMode="contain"
-          />
+        {/* Description */}
+        <Text style={styles.title}>Krea AI: Sparking Creative Lightning</Text>
+        <Text style={styles.description}>
+          KREA AI is particularly popular among designers, marketers, and
+          content creators who seek to generate high-quality visuals tailored
+          to their unique styles, concepts, or products. Its intuitive
+          interface simplifies the creative process, allowing users to produce
+          professional-looking content without advanced technical skills.
+        </Text>
 
-          {/* Description */}
-          <Text style={styles.title}>Krea AI: Sparking Creative Lightning</Text>
-          <Text style={styles.description}>
-            KREA AI is particularly popular among designers, marketers, and
-            content creators who seek to generate high-quality visuals tailored
-            to their unique styles, concepts, or products. Its intuitive
-            interface simplifies the creative process, allowing users to produce
-            professional-looking content without advanced technical skills.
-          </Text>
-
-          {/* Try Now Button */}
-          <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
-            <Text style={styles.tryNowButtonText}>TRY NOW</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        {/* Try Now Button */}
+        <TouchableOpacity onPress={openSecureBrowser} style={styles.tryNowButton}>
+          <Text style={styles.tryNowButtonText}>TRY NOW</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

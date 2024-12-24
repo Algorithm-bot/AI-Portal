@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "college",
+    "name": "AI Portal",
     "slug": "college",
-    "version": "1.0.0",
+    "version": "1.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/playstore.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/playstore.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,12 +17,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/playstore.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sahil_34.college"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "362725f1-f61f-4dec-a920-8b54fd317938"
+      }
     }
   }
 }

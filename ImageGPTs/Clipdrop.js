@@ -1,56 +1,45 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
-import { WebView } from "react-native-webview";
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar, Alert } from "react-native";
+import * as WebBrowser from "expo-web-browser";
 
 const Clipdrop = () => {
-  const [showWebView, setShowWebView] = useState(false);
-
-  const handleTryNow = () => {
-    setShowWebView(true); // Show WebView when "Try Now" is pressed
+  const handleTryNow = async () => {
+    try {
+      const result = await WebBrowser.openBrowserAsync("https://clipdrop.co/instant-text-to-image");
+      if (result.type !== "opened") {
+        Alert.alert("Error", "Unable to open the link. Please try again.");
+      }
+    } catch (error) {
+      Alert.alert("Error", "An unexpected error occurred. Please try again.");
+    }
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#000" }}>
-      {showWebView ? (
-        // WebView Screen
-        <View style={{ flex: 1 }}>
-          {/* Status Bar Background */}
-          <View style={styles.statusBarBackground} />
+      <StatusBar barStyle="light-content" backgroundColor="#404040" />
+      <View style={styles.container}>
+        <Image
+          source={require("../assets/images/photo-generators/clipdrop.jpg")}
+          style={styles.image}
+          resizeMode="contain"
+        />
 
-          {/* WebView */}
-          <WebView
-            source={{
-              uri: "https://clipdrop.co/instant-text-to-image",
-            }}
-            style={{ flex: 1 }}
-          />
-        </View>
-      ) : (
-        // Description Screen
-        <View style={styles.container}>
-          <Image
-            source={require("../assets/images/photo-generators/clipdrop.jpg")}
-            style={styles.image}
-            resizeMode="contain"
-          />
+        {/* Description */}
+        <Text style={styles.title}>Clipdrop: Reality Meets AI Design</Text>
+        <Text style={styles.description}>
+          ClipDrop, developed by Init ML (in collaboration with Stability AI),
+          is an AI-powered creative tool that simplifies tasks like background
+          removal, object cleanup, and image enhancement. ClipDrop's user-friendly
+          interface and advanced features, such as text-to-image generation
+          using Stable Diffusion, have made it a go-to tool for creating
+          polished visuals quickly and efficiently.
+        </Text>
 
-          {/* Description */}
-          <Text style={styles.title}>Clipdrop: Reality Meets AI Design</Text>
-          <Text style={styles.description}>
-            ClipDrop, developed by Init ML (in collaboration with Stability AI),
-            is an AI-powered creative tool that simplifies tasks like background
-            removal, object cleanup, and image enhancement. ClipDrop's user-friendly
-            interface and advanced features, such as text-to-image generation
-            using Stable Diffusion, have made it a go-to tool for creating
-            polished visuals quickly and efficiently.
-          </Text>
-
-          {/* Try Now Button */}
-          <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
-            <Text style={styles.tryNowButtonText}>TRY NOW</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        {/* Try Now Button */}
+        <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
+          <Text style={styles.tryNowButtonText}>TRY NOW</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -92,10 +81,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "white",
-  },
-  statusBarBackground: {
-    height: StatusBar.currentHeight || 20,
-    backgroundColor: "#404040", // Custom background color for the status bar
   },
 });
 

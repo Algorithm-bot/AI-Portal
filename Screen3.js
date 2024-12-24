@@ -31,7 +31,7 @@ const Screen3 = ({navigation}) => {
   {
       id: '5',
       title: 'DeepbrainAI',
-      image: require('./assets/images/video/DeepBrain.png'),
+      image: require('./assets/images/video/DeepBrain2.png'),
       screen: 'DeepbrainAI',
   },
   {

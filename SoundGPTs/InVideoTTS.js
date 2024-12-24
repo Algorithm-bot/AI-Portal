@@ -1,58 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
-import { WebView } from "react-native-webview";
+import * as WebBrowser from "expo-web-browser";
 
 const InVideoTTS = () => {
-  const [showWebView, setShowWebView] = useState(false);
-
-  const handleTryNow = () => {
-    setShowWebView(true); // Show WebView when "Try Now" is pressed
+  const handleTryNow = async () => {
+    // Open the URL in the device's default browser or in-app browser
+    await WebBrowser.openBrowserAsync("https://invideo.io/tools/ai-text-to-speech/");
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#000" }}>
-      {showWebView ? (
-        // WebView Screen
-        <View style={{ flex: 1 }}>
-          {/* Status Bar Background */}
-          <View style={styles.statusBarBackground} />
+      {/* Description Screen */}
+      <View style={styles.container}>
+        <Image
+          source={require("../assets/images/video/invideo_bg.png")}
+          style={styles.image}
+          resizeMode="contain"
+        />
 
-          {/* WebView */}
-          <WebView
-            source={{
-              uri: "https://invideo.io/tools/ai-text-to-speech/",
-            }}
-            style={{ flex: 1 }}
-          />
-        </View>
-      ) : (
-        // Description Screen
-        <View style={styles.container}>
-          <Image
-            source={require("../assets/images/video/invideo_bg.png")}
-            style={styles.image}
-            resizeMode="contain"
-          />
+        {/* Description */}
+        <Text style={styles.title}>InVideo's Voice Revolution: Beyond Text</Text>
+        <Text style={styles.description}>
+          InVideo TTS is a text-to-speech feature integrated into InVideo's
+          video editing platform, allowing users to convert written text into
+          realistic voiceovers for their video projects. It offers a range of
+          voices and languages, making it suitable for creating engaging
+          videos, ads, tutorials, and social media content with minimal
+          effort.
+        </Text>
 
-          {/* Description */}
-          <Text style={styles.title}>
-            InVideo's Voice Revolution: Beyond Text
-          </Text>
-          <Text style={styles.description}>
-            InVideo TTS is a text-to-speech feature integrated into InVideo's
-            video editing platform, allowing users to convert written text into
-            realistic voiceovers for their video projects. It offers a range of
-            voices and languages, making it suitable for creating engaging
-            videos, ads, tutorials, and social media content with minimal
-            effort.
-          </Text>
-
-          {/* Try Now Button */}
-          <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
-            <Text style={styles.tryNowButtonText}>TRY NOW</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        {/* Try Now Button */}
+        <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
+          <Text style={styles.tryNowButtonText}>TRY NOW</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -94,10 +75,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "white",
-  },
-  statusBarBackground: {
-    height: StatusBar.currentHeight || 20,
-    backgroundColor: "#404040", // Custom background color for the status bar
   },
 });
 

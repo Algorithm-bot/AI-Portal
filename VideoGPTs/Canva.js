@@ -1,57 +1,48 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
-import { WebView } from "react-native-webview";
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar, Alert } from "react-native";
+import * as WebBrowser from "expo-web-browser";
 
 const Canva = () => {
-  const [showWebView, setShowWebView] = useState(false);
-
-  const handleTryNow = () => {
-    setShowWebView(true); // Show WebView when "Try Now" is pressed
+  const handleTryNow = async () => {
+    try {
+      const result = await WebBrowser.openBrowserAsync(
+        "https://www.canva.com/features/ai-video-generator/"
+      );
+      if (result.type !== "opened") {
+        Alert.alert("Error", "Unable to open the link. Please try again.");
+      }
+    } catch (error) {
+      Alert.alert("Error", "An unexpected error occurred. Please try again.");
+    }
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#000" }}>
-      {showWebView ? (
-        // WebView Screen
-        <View style={{ flex: 1 }}>
-          {/* Status Bar Background */}
-          <View style={styles.statusBarBackground} />
+      <StatusBar barStyle="light-content" backgroundColor="#404040" />
+      <View style={styles.container}>
+        <Image
+          source={require("../assets/images/video/canva_bg.png")}
+          style={styles.image}
+          resizeMode="contain"
+        />
 
-          {/* WebView */}
-          <WebView
-            source={{
-              uri: "https://www.canva.com/features/ai-video-generator/",
-            }}
-            style={{ flex: 1 }}
-          />
-        </View>
-      ) : (
-        // Description Screen
-        <View style={styles.container}>
-          <Image
-            source={require("../assets/images/video/canva_bg.png")}
-            style={styles.image}
-            resizeMode="contain"
-          />
+        {/* Description */}
+        <Text style={styles.title}>
+          Canva: Your All-in-One Solution for Stunning Video Creation
+        </Text>
+        <Text style={styles.description}>
+          Canva's video creation tools empower users to design engaging videos
+          without prior experience. Users can access over a million
+          professionally designed templates, stock images, videos, and music
+          tracks to personalize their content. Canva also provides real-time
+          collaboration features, facilitating teamwork on video projects.
+        </Text>
 
-          {/* Description */}
-          <Text style={styles.title}>
-            Canva: Your All-in-One Solution for Stunning Video Creation
-          </Text>
-          <Text style={styles.description}>
-            Canva's video creation tools empower users to design engaging videos
-            without prior experience. Users can access over a million
-            professionally designed templates, stock images, videos, and music
-            tracks to personalize their content. Canva also provides real-time
-            collaboration features, facilitating teamwork on video projects.
-          </Text>
-
-          {/* Try Now Button */}
-          <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
-            <Text style={styles.tryNowButtonText}>TRY NOW</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        {/* Try Now Button */}
+        <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
+          <Text style={styles.tryNowButtonText}>TRY NOW</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

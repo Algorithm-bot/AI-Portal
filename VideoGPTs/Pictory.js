@@ -1,58 +1,49 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar } from "react-native";
-import { WebView } from "react-native-webview";
+import React from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image, StatusBar, Alert } from "react-native";
+import * as WebBrowser from "expo-web-browser";
 
 const Pictory = () => {
-  const [showWebView, setShowWebView] = useState(false);
-
-  const handleTryNow = () => {
-    setShowWebView(true); // Show WebView when "Try Now" is pressed
+  const handleTryNow = async () => {
+    try {
+      const result = await WebBrowser.openBrowserAsync("https://app.pictory.ai/signup");
+      if (result.type !== "opened") {
+        Alert.alert("Error", "Unable to open the link. Please try again.");
+      }
+    } catch (error) {
+      Alert.alert("Error", "An unexpected error occurred. Please try again.");
+    }
   };
 
   return (
     <View style={{ flex: 1, backgroundColor: "#000" }}>
-      {showWebView ? (
-        // WebView Screen
-        <View style={{ flex: 1 }}>
-          {/* Status Bar Background */}
-          <View style={styles.statusBarBackground} />
+      <StatusBar barStyle="light-content" backgroundColor="#404040" />
+      <View style={styles.container}>
+        <Image
+          source={require("../assets/images/video/pictory_bg.png")}
+          style={styles.image}
+          resizeMode="contain"
+        />
 
-          {/* WebView */}
-          <WebView
-            source={{ uri: "https://app.pictory.ai/signup" }}
-            style={{ flex: 1 }}
-          />
-        </View>
-      ) : (
-        // Description Screen
-        <View style={styles.container}>
-          <Image
-            source={require("../assets/images/video/pictory_bg.png")}
-            style={styles.image}
-            resizeMode="contain"
-          />
+        {/* Description */}
+        <Text style={styles.title}>
+          Pictory: Simplifying Video Creation with AI-Driven Automation Videos
+        </Text>
+        <Text style={styles.description}>
+          Pictory's text-to-video feature transforms written content into
+          engaging video summaries or social media videos. It uses AI to
+          analyze text and generate relevant visuals, making it ideal for
+          bloggers, marketers, and content creators. Pictory, launched in 2021,
+          is developed by Pictory.ai, a company specializing in AI-powered
+          video creation. It has gained popularity for its ease of use,
+          allowing users to quickly create professional videos from long-form
+          content.
+        </Text>
 
-          {/* Description */}
-          <Text style={styles.title}>
-            Pictory: Simplifying Video Creation with AI-Driven Automation Videos
-          </Text>
-          <Text style={styles.description}>
-            Pictory's text-to-video feature transforms written content into
-            engaging video summaries or social media videos. It uses AI to
-            analyze text and generate relevant visuals, making it ideal for
-            bloggers, marketers, and content creators.Pictory, launched in 2021,
-            is developed by Pictory.ai, a company specializing in AI-powered
-            video creation. It has gained popularity for its ease of use,
-            allowing users to quickly create professional videos from long-form
-            content.
-          </Text>
-
-          {/* Try Now Button */}
-          <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
-            <Text style={styles.tryNowButtonText}>TRY NOW</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        {/* Try Now Button */}
+        <TouchableOpacity onPress={handleTryNow} style={styles.tryNowButton}>
+          <Text style={styles.tryNowButtonText}>TRY NOW</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
