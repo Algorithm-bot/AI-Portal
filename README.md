@@ -108,6 +108,7 @@ eas build --platform android
 eas build --platform ios
 ```
 
+## Playstore Link : https://play.google.com/store/apps/details?id=com.sahil_34.college&hl=en
 ## Contributing
 
 1. Fork the repository
