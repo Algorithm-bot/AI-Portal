@@ -1,7 +1,6 @@
 # AI Portal
 
-A comprehensive mobile application that provides access to various AI tools and services, including chatbots, image generators, video creators, and speech synthesis tools.
-
+A Android app where users can access various AI Tools using webview. It increases productivity by not having to switch between multiple tabs to open link in the web browser
 ## Features
 
 ### 1. Chatbots
@@ -80,7 +79,7 @@ npm install
 
 3. Start the development server:
 ```bash
-npm start
+npm expo start
 ```
 
 4. Run on specific platforms:
@@ -93,32 +92,6 @@ npm start
 - Node.js
 - npm or yarn
 - Expo CLI
-- Android Studio (for Android development)
-- Xcode (for iOS development)
-
-## Dependencies
-
-The project uses the following major dependencies:
-- React Native
-- Expo
-- React Navigation
-- Various AI service integrations
-
-For a complete list of dependencies, see `package.json`.
-
-## Configuration
-
-The app uses the following configuration files:
-- `app.json` - Expo configuration
-- `eas.json` - EAS Build configuration
-- `react-native.config.js` - React Native configuration
-
-## Assets
-
-The app includes:
-- Custom fonts (Eagle.ttf, MyFont.ttf)
-- Various images for AI services
-- Icons and splash screen assets
 
 ## Building for Production
 
@@ -143,16 +116,3 @@ eas build --platform ios
 4. Push to the branch
 5. Create a new Pull Request
 
-## License
-
-This project is licensed under the 0BSD License - see the LICENSE file for details.
-
-## Support
-
-For support, please open an issue in the repository or contact the maintainers.
-
-## Acknowledgments
-
-- All AI service providers
-- Expo team
-- React Native community 
