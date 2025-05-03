@@ -20,6 +20,8 @@ import Jabberwacky from "./GPTs/Jabberwacky";
 import Kuki from "./GPTs/Kuki";
 import SimSimi from "./GPTs/SimSimi";
 import Character from "./GPTs/Character";
+import DeepSeek from "./GPTs/DeepSeek";
+import Qwen from "./GPTs/Qwen";
 
 //Below are ImageGPTs
 import Ideogram from "./ImageGPTs/Ideogram";
@@ -373,6 +375,18 @@ export default function App() {
         <Stack.Screen
           name="TTS"
           component={TTS}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="DeepSeek"
+          component={DeepSeek}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Qwen"
+          component={Qwen}
           options={{ headerShown: false }}
         />
 
